@@ -1,0 +1,27 @@
+---
+title: Awesome Post
+author: ''
+date: '2020-01-09'
+slug: my-new-project
+categories: []
+tags: []
+subtitle: ''
+summary: ''
+authors: []
+lastmod: '2020-01-09T15:02:34-08:00'
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+projects: []
+---
+
+Here's some sweet code!
+
+An awesoe plot:
+
+```{r}
+plot(cars)
+```
+
