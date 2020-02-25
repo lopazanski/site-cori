@@ -18,18 +18,54 @@ subtitle = ""
   icon = "r-project"
   icon_pack = "fab"
   name = "R"
-  description = "90%"
+  description = "Daily use for environmental data science projects, statistcal analyses, coursework"
   
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
   name = "Statistics"
-  description = "100%"  
+  description = ""  
+
+[[feature]]
+  icon = "microsoft"
+  icon_pack = "fas"
+  name = "Microsoft Office"
+  description = "Nicknamed office 'Excel Wizard'"
+
+[[feature]]
+  icon = "globe"
+  icon_pack = "fas"
+  name = "Spanish"
+  description = "Conversationally fluent"  
+  
+[[feature]]
+  icon = "anchor"
+  icon_pack = "fas"
+  name = "Watercraft"
+  description = "Navigation, Trailering, Maintenance, Crew"  
+  
+[[feature]]
+  icon = "fish"
+  icon_pack = "fas"
+  name = "Field Sampling"
+  description = "Extensive experience in use and maintenance of various sampling gear"
+  
+[[feature]]
+  icon = "swimmer"
+  icon_pack = "fas"
+  name = "SCUBA"
+  description = "Rescue Diver Certification (PADI)"  
+
+[[feature]]
+  icon = "first-aid"
+  icon_pack = "fas"
+  name = "CPR & First-Aid"
+  description = "American Heart Association"  
   
 [[feature]]
   icon = "camera-retro"
   icon_pack = "fas"
   name = "Photography"
-  description = "10%"
+  description = "ImageJ, Adobe (Photoshop/Lightroom), I3S"
 
 +++

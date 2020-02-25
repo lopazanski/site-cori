@@ -1,0 +1,343 @@
+---
+title: "Population characteristics of the Pacific giant salamander in old growth vs clear cut forests"
+author: "Cori Lopazanski, Kai Kopecky"
+date: "11/22/2019"
+output: 
+  html_document:
+    theme: paper
+    toc: true
+    toc_float: true
+---
+
+```{r setup, include = FALSE}
+# Set up so that only outputs will show when the code runs
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, error = FALSE, warning = FALSE)
+
+# Attach necessary packages
+library(tidyverse)
+library(janitor)
+library(kableExtra)
+library(ggbeeswarm)
+library(ggridges)
+library(ggjoy)
+library(effsize)
+
+# Read in the data, clean up names, filter to only include Pacific giant salamander ("DITE")
+salamander <- read_csv("mack_creek_vertebrates.csv") %>% 
+  clean_names() %>% 
+  filter(species == "DITE")
+```
+
+### Introduction
+
+Amphibian populations have been declining for over half a century^1^, with more than 32% of global populations currently threatened^2^. Habitat loss and fragmentation are among the biggest threats to these fragile populations, which require particular temperatures and levels of moisture to survive^3^. Clear-cut logging, in particular, has been shown to increase sedimentation in streams, which negatively impacts larval amphibians^3^. Monitoring efforts have been implemented to assess how activities like clear-cutting affect salmonid populations, including the Aquatic Vertebrate Population Study within the H.J. Andrews Forest Long Term Ecological Research Program (HJA LTER), which monitors the threatened Pacific giant salamander (*Dicamptodon tenebrosus*) among other species. Here, we examine the distribution of Pacific giant salamanders in a section of forest that was clear-cut for logging in 1963 compared to a nearby 500 year old coniferous forest in Mack Creek, Oregon. Restoration efforts are sometimes used to attempt to convert habitats from a degraded state back to their pre-disturbance condition, typically by creating pools or increasing habitat complexity^4^. Understanding how the distribution of Pacific giant salamanders changes in different habitats can help guide restoration efforts. 
+
+![***Figure 1.*** Pacific giant salamander, *Dicamptodon tenebrosus*. Photographer: Joel Sartore, National Geographic Photographer ([source](https://www.joelsartore.com/ani067-00279/))](salamander.jpg)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mmm1Ml4sHE4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+***Figure 2.*** Video of Pacific giant salamander. These are some of the only amphibians known to make vocalizations. Provided by YouTube user: MFWestphal ([source](https://youtu.be/mmm1Ml4sHE4))
+
+***
+### Data and Methods
+As part of an effort to monitor population trends of aquatic vertebrates in the H.J. Andrews Experimental Forest, data on annual abundances, weights, forest section location, and habitat preferences of the Pacific giant salamander have been collected by researchers with the Andrews Forest Long Term Ecological research site since 1993^5^. Mack Creek runs through sections of both old growth and historically clear-cut forest and provides three primary types of habitat for aquatic organisms (pools, side-channels, and cascades). 150m stretches of the creek are divided into contiguous 50m sections, which were netted at each end. Observations for aquatic vertebrates were acquired via two-pass electrofishing, followed by subsequent measurement of body dimensions and weight for all captured individuals.
+
+We compared annual abundances since 1993, and habitat preferences and weight differences in 2017 for Pacific giant salamanders in old growth and clear cut sections of forest. We used a Chi-square test to assess salamander habitat preferences within forest sections, a two-sample t-test test to compare mean weights by forest section, and a one-way ANOVA to compare mean weights of salamanders across the three primary habitat types. For all statistical tests, we used a significance level of $\alpha$ = 0.05. All data preparation and analyses were completed using R software (version 3.6.1) and RStudio (version 1.2.5001).
+
+![***Figure 3.*** Map of H. J. Andrews Experimental Forest with associated streams. Streams are depicted as blue lines and sample locations as green circles. This report focuses on salamanders found in Mack Creek. Picture credit: Sashka Warner. ([source](https://www.researchgate.net/publication/324601050_Interactions_of_Roads_and_Deforestation_with_Stream_Sediment_Size_and_Network_Structure_in_the_Western_Cascade_Range_of_Oregon/figures?lo=1))](HJ_andrews_national_forest_map.png)
+
+
+### Results
+
+#### Pacific giant salamander abundance over time
+
+Trends in Pacific giant salamander abundance were compared for the clear cut and old growth sections of Mack Creek from 1993 to 2017 (Figure 4). Throughout 1993-2017, Pacifc giant salamander abundances observed in sections of old growth forest were consistently higher than in historically clear-cut sections, with exceptions to this trend in 1994 and 2014-2017. Both populations show a marked increase in abundance following 2001 and 2014, as well as a sharp decline in 2011. Overall, populations of salamanders increased from 1993 to 2017 by 154% in the old growth section, and 192% in the clear cut section. 
+
+```{r part A}
+# Subset salamander dataframe to include only columns of interest and salamander counts for each year by forest section; in hindsight count() would be easier but this worked
+salamander_abundance <- salamander %>% 
+  select(year, section, species) %>% 
+  mutate(species = ifelse(species == "DITE", 1, 0)) %>% 
+  mutate(species = as.numeric(species)) %>% 
+  mutate(section = ifelse(section == "OG", "Old Growth", "Clear Cut")) %>% 
+  group_by(year, section) %>% 
+  summarize(abundance = sum(species))
+  
+# Using count() - oops, definitely easier
+salamander_count <- salamander %>% 
+  select(year, section) %>% # no need to worry about species b/c we already selected DITE
+  count(id = year, section)
+
+
+# Line plot showing salamander abundances from 1993 (start of monitoring) to present in both clear-cut and old growth forest sections
+ggplot(data = salamander_abundance, aes(x = year, y = abundance))+
+  geom_line(aes(color = section))+
+  theme_classic()+
+  theme(legend.position = c(0.2, 0.8)) + # move legend inside the plot 
+  labs(x = "Year", # reader friendly labels
+       y = "Salamander abundance",
+       color = NULL)+
+  scale_x_continuous(limits = c(1993, 2017), # set particular scale limits and breaks
+                     breaks = c(seq(1993, 2017, by = 2)))+
+  scale_y_continuous(limits = c(0, 400), expand = c(0,0))
+  
+
+# Overall percent increase: salamanders increased in abundance over time 
+count_section_table <- salamander_count %>% 
+  filter(id %in% c("1993", "2017")) %>%  # just data from 1993 and 2017
+  pivot_wider(names_from = id, values_from = n) %>% 
+  rename(y2017 = "2017") %>% # rename so is easier to use the column names in math in mutate()
+  rename(y1993 = "1993") %>% 
+  mutate(
+    pct_change = ((y2017-y1993)/y1993)*100 # create column calculating percent change
+  )
+  
+  
+``` 
+
+***Figure 4.*** *Annual abundances of the Pacific giant salamander in two standard reaches of Mack Creek in the H. J. Andrews Experimental Forest from 1993 -2017. Salamanders were counted in a reach running through a section of old growth forest (blue line) and a section of historically clear-cut forest (red line).* 
+
+#### Salamander habitat preference within old growth vs clear cut forest sections
+
+```{r part B}
+# Create a table of the counts of salamanders in the different habitat types for 2017
+count_creek_base <- salamander %>% 
+  filter(year == "2017" & unittype %in% c("C", "P", "SC")) %>% # keep data in 2017, specific habitat types
+  mutate( 
+    unittype = case_when( # Use case_when() to change the names to more reader-friendly
+      unittype == "C" ~ "Cascade",
+      unittype == "P" ~ "Pool",
+      unittype == "SC" ~ "Side-Channel")) %>% 
+  count(section, unittype) %>% # count for each section and channel classification
+  pivot_wider(names_from = section, values_from = n)
+
+count_creek <- count_creek_base %>% 
+  adorn_percentages(denominator = "col") %>%  # add the percentage proportions to the table
+  adorn_pct_formatting(digits = 1) %>% 
+  adorn_ns(position = "front")
+
+# Use kableExtra to make a nicely-formatted table - extra formatting settings that are easy to deal with
+kable(count_creek, col.names = c("", "Clear Cut", "Old Growth")) %>%
+        kable_styling(bootstrap_options = c("striped", "hover"), 
+                full_width = F,
+                position = "float_right") %>% 
+add_header_above(c("Table 1: Proportions of giant salamanders \nin different channel classifications \nobserved in two sections of Mack Creek" = 3))
+
+```
+
+```{r part C}
+# Is there a significant difference in where in the channel Pacific giant salamanders are located (pool, cascade or side channel) between the two sections (old growth and clear cut)? 
+# Use chi-square test:
+chi_count <- count_creek_base %>%  # want the table to just have the numbers
+  select(-unittype)
+
+chi_count_result <- chisq.test(chi_count)
+```
+
+Channels that make up Pacific giant salamander habitat are often classified into three different areas: cascades, pools, and side channels. Proportions of salamanders in each channel classification were compared for the old growth and clear cut sections of Mack Creek (Table 1). 
+
+There is not a significant effect of forest section (old growth or clear cut) on where salamanders are found in the channel ($\chi$^2^(`r chi_count_result$parameter`) = `r round(chi_count_result$statistic, 2)`, p = `r round(chi_count_result$p.value, 2)`). There are similar proportions of salamanders found in each of the three channel classifications in both the clear-cut and old growth sections of forest (Table 1).
+
+
+
+#### Comparison of salamander weight by forest section and channel classification
+
+```{r part D, include=FALSE}
+# Is there a significant difference in mean weights for Pacific giant salamanders observed in the two forest sections (clear cut and old growth) in 2017? 
+
+# Create subset of data with just the weight and section info for 2017
+salamander_weight <- salamander %>% 
+  filter(year == "2017") %>% 
+  select(section, weight)
+
+# Make a summary table with means and medians for future reference/comparison/just to see
+wt_summary <- salamander_weight %>% 
+  group_by(section) %>% 
+  summarize(median = median(weight, na.rm = TRUE),
+            mean = mean(weight, na.rm = TRUE))
+
+# Subset for just the weights in the old-growth section
+weight_og <- salamander_weight %>% 
+  filter(section == "OG")
+
+# Subset for just the weights in the clear-cut section
+weight_cc <- salamander_weight %>% 
+  filter(section == "CC")
+
+# Look at the data to see how they are distributed (good practice!)
+ggplot(data = salamander_weight, aes(x = weight)) +
+  geom_histogram(aes(fill = section))
+
+ggplot(data = salamander_weight, aes(sample = weight)) +
+  geom_qq()+
+  facet_wrap(~section)
+
+# Data are not not totally normally distributed - mostly normal except for at very high weights. Since the majority seem normal, will still do a two-sample t-test to compare means.
+weight_t <- t.test(weight_og$weight, weight_cc$weight)
+weight_t
+
+# Alternative for non-parametric data would be the Mann-Whitney U (just try out of curiosity)
+weight_rank <- wilcox.test(weight_og$weight, weight_cc$weight)
+weight_rank
+
+# What to do when the tests yield conflicting results: decide to use t-test since data is mostly normal and also since the assignment indicates to compare mean weights, not another comparison.
+
+# Calculate proportional differences to see if that is a better way of explaining the data
+mean_wt_og <- mean(weight_og$weight, na.rm = TRUE)
+mean_wt_cc <- mean(weight_cc$weight, na.rm = TRUE)
+median_wt_og <- median(weight_og$weight, na.rm = TRUE)
+median_wt_cc <- median(weight_cc$weight, na.rm = TRUE)
+pct_diff_median_wt <- (median_wt_og/median_wt_cc)*100
+pct_diff_mean_wt <- (mean_wt_og/mean_wt_cc)*100
+
+# Decided to not include proportional differences in order to simplify the story of results and focus on the bigger picture for this section.
+
+```
+
+In addition to abundance, examining salamander weight can yield more information about the size distribution of the populations in the different forest sections and channel classifications.
+
+There was no significant difference in mean salamander weight in 2017 for the old growth compared to the clear cut section of forest (two sample t-test, t(`r round(weight_t$parameter, 2)`) = `r round(weight_t$statistic, 2)`, *p* = `r round(weight_t$p.value, 3)`). Thus, weight information was combined for the two sections to examine size distributions across the diffferent channel classifications (Figure 5). 
+
+
+```{r part E.1}
+# Comparison of salamander weights across habitat type
+# First, create a dataframe for just weights and habitat type
+salamander_habitat_2017 <- salamander %>% 
+  filter(year == "2017") %>% 
+  select(unittype, weight) %>% 
+  filter(unittype != "IP") %>% # exclude the Isolated Pools because we only want channel-related habitats
+  mutate(unittype = case_when(unittype == "C" ~ "Cascade",
+                              unittype == "P" ~ "Pool",
+                              unittype == "SC" ~ "Side-Channel"))
+
+# Now create a summary table of mean weights and standard deviations by habitat type
+salamander_weight_comparison <- salamander_habitat_2017 %>% 
+  group_by(unittype) %>%
+  summarize(
+    mean_wt = mean(weight, na.rm = TRUE),
+    sd_wt = sd(weight, na.rm = TRUE),
+    sample_size = n(),
+    se_wt = sd(weight / sqrt(sample_size), na.rm = TRUE)) # calculate standard error
+  
+# Violin plot with mean weights +/- standard error
+ggplot()+
+  geom_violin(data = salamander_habitat_2017, aes(x = unittype, y = weight, fill = unittype), alpha = 0.5, show.legend = FALSE)+
+  geom_point(data = salamander_weight_comparison, aes(x = unittype, y = mean_wt))+
+  geom_errorbar(data = salamander_weight_comparison, 
+                aes(x = unittype,
+                ymax = mean_wt + se_wt,
+                ymin = mean_wt - se_wt),
+                width = 0.1)+
+  scale_y_continuous(limits = c(0, 90),
+                     expand = c(0, 0),
+                     breaks = c(seq(0, 90, by = 10)))+
+  labs(x = "Channel unit",
+       y = "Mean mass (g)",
+       fill = NULL)+
+  coord_flip()+
+  theme_classic()
+```
+
+***Figure 5. *** *Distributions for Giant Pacific Salamander mass (g) are displayed (violins) for habitat type, pooled for old growth and clear cut sections of forest. Mean masses (black dots) $\pm$ standard error (error bars) are displayed for each habitat type.*
+
+```{r part E.2, eval=FALSE, include=FALSE}
+#Try it as a density plot 
+ggplot(salamander_habitat_2017, aes(x = weight, y = unittype, fill = unittype))+
+  geom_joy(data = filter(salamander_habitat_2017, unittype == "Side-Channel"), 
+          alpha = 0.4,   
+           scale = 0.9)+  
+ geom_joy(data = filter(salamander_habitat_2017, unittype == "Pool"),
+         alpha = 0.4,
+        scale = 0.9)+
+ geom_joy(data = filter(salamander_habitat_2017, unittype == "Cascade"),
+          alpha = 0.4,
+          scale = 0.9)+
+ theme_joy()+
+ theme_minimal()+
+ labs(x = "Channel unit",
+      y = "Mass (g)",
+      fill = NULL)
+#... not as good as a visualization as the violin; will not include in report
+```
+
+
+```{r part E.3, include=FALSE}
+# Look at the data a few other ways
+ggplot(data = salamander_habitat_2017, aes(x = weight))+
+  geom_histogram(aes(fill = unittype))
+
+ggplot(data = salamander_habitat_2017, aes(sample = weight))+
+  geom_qq() +
+  facet_wrap(~unittype)
+
+# Note that the data isn't completely normally distributed, so there may be some concerns about using means as a metric of comparison
+```
+
+
+```{r part E.4}
+# Comaparison of mean weights using one-way ANOVA
+habitat_mass_anova <- aov(weight ~ unittype, data = salamander_habitat_2017)
+habtiat_anova_summary <- summary(habitat_mass_anova)
+aov_outputs <- unlist(summary(habitat_mass_anova))
+
+# Post hoc test to determine group differences: Tukey HSD
+tukey_test <- TukeyHSD(habitat_mass_anova)
+# Shows that Side-Channel and Pool are the only significantly different groups compared pairwise
+
+# Dataframes for effect size calculations
+salamander_side_channel_2017 <- salamander_habitat_2017 %>% 
+  filter(unittype == "Side-Channel")
+
+salamander_pool_2017 <- salamander_habitat_2017 %>% 
+  filter(unittype == "Pool")
+
+salamander_cascade_2017 <- salamander_habitat_2017 %>% 
+  filter(unittype == "Cascade")
+
+effect_size_habitat <- cohen.d(salamander_pool_2017$weight, salamander_side_channel_2017$weight)
+
+# Means differences
+mean_pool <- mean(salamander_pool_2017$weight)
+
+mean_sc <- mean(salamander_side_channel_2017$weight)
+
+mean_cascade <- mean(salamander_cascade_2017$weight, na.rm = TRUE)
+
+mean_calculated <- mean_pool - mean_sc
+
+# Percent differences
+pct_diff <- ((mean_pool-mean_sc)/mean_sc)*100
+
+# Standard errors for in-line referencing
+se_pool <- salamander_pool_2017 %>% 
+  summarize(sd(weight/sqrt(n())))
+
+se_side_channel <- salamander_side_channel_2017 %>% 
+  summarize(sd(weight/sqrt(n())))
+
+se_cascade <- salamander_cascade_2017 %>% 
+  summarize(sd(weight/sqrt(n()), na.rm = TRUE))
+```
+
+Mean weights of Pacific giant salamanders did differ significantly between pools and side channels (one-way ANOVA with post-hoc Tukey's HSD: F$_{`r aov_outputs[1]`,`r aov_outputs[2]`}$ = `r round(aov_outputs[7],2)`, *p* = `r round(aov_outputs[9],3)`). Mean weights for individuals from cascades did not differ significantly from the other two habitat types (Figure 5). The average weight for populations residing in pools (`r round(mean_pool, 2)` $\pm$ `r round(se_pool, 2)` g) was `r round(pct_diff, 2)`% more than that of populations observed in side-channels (`r round(mean_sc, 2)` $\pm$ `r round(se_side_channel, 2)` g). Due to large within group variation of salamander weights in each habitat type, an alternative metric -- population medians, for instance -- may lend to a more meaningful and accurate comparison across these groups. This could be achieved by using a rank-based test, such as a Mann-Whitney U test.
+
+***
+### Summary
+
+- From 1993-2017, overall Pacific giant salamander abundances increased in both old growth and  historically clear cut sections of forest, by 154% and 192% respectively (Figure 4).
+- Forest section (old growth vs clear cut) did not significantly affect the habitat type (pool, cascade, or side-channel) in which salamnders were found (Table 1). 
+- There is no significant difference in mean salamander weight in 2017 for the old growth compared to the clear cut section of forest.
+- In 2017, the mean weight of salamanders residing in pools was significantly greater than that of populations in side channels (Figure 5).
+
+### References
+
+1. Houlahan, J., et al. "Quantitative evidence for global amphibian population declines." Nature 404 (2000): 752-755.
+
+2. Stuart, S. N., et al. "Status and trends of amphibian declines and extinctions worldwide." Science 306 (2004): 1783-1786.
+
+3. Johnston, B. and Frid, L. "Clearcut logging restricts the movements of terrestrial Pacific giant salamanders (Dicamptodon tenebrosus Good)" Canadian Journal of Zoology 80 (2011): 2170-2177.
+
+4. IDK WHICH ONE IT IS CAUSE YOU CANT GET ACCESS OFF CAMPUS WHICH IS DUMB SO GUESS ILLL DO IT TOMORROW
+
+5. Gregory S. V. 2016. Aquatic Vertebrate Population Study in Mack Creek, Andrews Experimental Forest, 1987 to present. Environmental Data Initiative. https://doi.org/10.6073/pasta/5de64af9c11579266ef20da2ff32f702. Dataset accessed 11/19/2019.
+
+

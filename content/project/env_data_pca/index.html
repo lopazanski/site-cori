@@ -1,0 +1,63 @@
+---
+title: 'Examining global environmental data with principal component analysis'
+author: "Cori Lopazanski"
+date: "2/5/2020"
+output: html_document
+---
+
+
+
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p>This document explores the relationship between various environmental variables for 224 different countries. It will use principal component analysis to illustrate how characteristics like elevation, rainfall, and amount of cropland relate to each other at global scale.</p>
+<p>About the data: this document uses data compiled and provided by <span class="citation">@zanter_venter</span>, who synthesized country-level statistics using the Google Earth Engine. Data can be found <a href="https://www.kaggle.com/zanderventer/environmental-variables-for-world-countries">here</a>.</p>
+</div>
+<div id="data-analysis" class="section level3">
+<h3>Data Analysis</h3>
+<pre class="r"><code># Attach packages
+library(tidyverse)
+library(janitor)
+library(ggfortify)
+
+# Read in the world environment data:
+world_data &lt;- read_csv(&quot;world_env_vars.csv&quot;) %&gt;% 
+  select(elevation, cropland_cover, tree_canopy_cover, rain_mean_annual, temp_mean_annual, cloudiness) %&gt;% 
+  rename(&quot;Elevation&quot; = elevation, # Rename variables for plot label friendliness later
+         &quot;Cropland Cover&quot; = cropland_cover,
+         &quot;Tree Canopy Cover&quot; = tree_canopy_cover,
+         &quot;Mean Annual Rainfall&quot; = rain_mean_annual,
+         &quot;Mean Annual Temperature&quot; = temp_mean_annual,
+         &quot;Cloudiness&quot; = cloudiness)
+
+# Evaluate missing data situation
+# summary(world_data)
+
+# None of the chosen variables have too many NAs (11 is max) compared to data set - will drop those
+world_data &lt;- world_data %&gt;% 
+  drop_na()
+
+# PConduct pca and save, scale = TRUE to convert to similar scales
+world_pca &lt;- prcomp(world_data, scale = TRUE)
+
+# Use ggfortify to make a biplot
+autoplot(world_pca,
+         colour = NA,
+         loadings.colour = &quot;forestgreen&quot;, # change color of eigenvectors
+         loadings.label = TRUE, 
+         loadings.label.size = 3,
+         loadings.label.colour = &quot;black&quot;,
+         loadings.label.repel = TRUE) +
+  theme_minimal()+
+  scale_y_continuous(limits = c(-0.2, 0.2), expand = c(0,0)) + # set limits to scale of x and y axis
+  scale_x_continuous(limits = c(-0.2, 0.2), expand = c(0,0))</code></pre>
+<p><img src="/project/env_data_pca/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><strong><em>Figure 1.</em></strong> Biplot resulting from principal component anlaysis conducted on world environmental data. Green arrows indicate strength and relationship of variables labeled.</p>
+</div>
+<div id="summary" class="section level3">
+<h3>Summary</h3>
+<ul>
+<li>Elevation and cropland cover are highly positively correlated with each other</li>
+<li>Mean annual temperature is negatively correlated with elevation and cropland cover</li>
+<li>Mean annual rainfall, canopy cover, and cloudiness are positively correllated with each other and minimally correlated with the other three variables</li>
+</ul>
+</div>

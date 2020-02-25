@@ -23,13 +23,13 @@ social:
   link: '#contact'
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://twitter.com/cori_lopazanski
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=cori+lopazanski&btnG=
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/lopazanski
 superuser: true
 user_groups:
 - Researchers

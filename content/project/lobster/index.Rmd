@@ -1,0 +1,302 @@
+---
+title: "Spiny lobster size and abundance along the Santa Barbara coast"
+subtitle: "Changes inside and outside Marine Protected Areas from 2012-2018"
+author: "Cori Lopazanski, Kai Kopecky"
+date: "11/18/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, #exclude code from knitted document
+                      message = FALSE, # exclude messages
+                      warning = FALSE, # exclude warnings
+                      error = FALSE) # exclude errors
+```
+***
+### Introduction
+
+Marine Protected Areas (MPAs) have been established along the California coast to protect coastal species and their habitat through regulation of fishing and other potentially harmful human activities^1^. Monitoring efforts have been implemented to assess the effectiveness of these MPAs by comparing population characteristics of species inside and outside of the protected areas^2^. One such effort, undertaken by the Santa Barbara Coastal Long Term Ecological Research (SBC LTER) program, conducts yearly monitoring of kelp forest species in the Santa Barbara Channel inside and outside of MPAs. Within the Santa Barbara Channel, the California Spiny Lobster (*Panulirus interruptus*) is currently a species of interest, as it provides a lucrative fishery but also serves an important role in maintaining kelp forest ecosystems through predation of sea urchins^3^. Without predatory regulation, sea urchins can reach abundances high enough to decimate kelp populations and induce unfavorable ecosystem shifts from kelp forests to urchin barrens^4^. Excessive fishing of other species of lobster has been implicated in causing subsequent overgrazing of macroalgal communities by sea urchins^5,^ ^6^. Here, we assess impacts of fishing pressure on population characteristics of the California Spiny lobster from 2012-2018.
+
+
+![***Figure 1:*** California Spiny Lobster, *Panulirus interruptus*. Photographer: Joel Sartore, National Geographic Photographer ([source](https://www.joelsartore.com/inv002-00049/))](lobster.jpg)
+
+***
+### Data and methods 
+
+Data for California spiny lobster abundance and size were collected and provided by researchers with the Santa Barbara Coastal Long-Term Ecological Research Program (SBC LTER)^7^. Divers collected annual estimates from 2012-2018 at five long-term kelp forest sites. Two sites (Naples and Isla Vista) are located in designated MPAs, which were created on 2012-01-01. The other three sites (Mohawk Reef, Carpinteria, and Arroyo Quemado) are located in unprotected areas. Estimates were collected annually in late summer, before the start of the fishing season, by counting lobsters to quantify abundance and visually estimating the carapace length (mm) for size information across a 40-meter transect at the five sites. 
+
+Changes in annual lobster abundance over time were examined for each site by comparing the total lobster count for each year from 2012-2018. Size distributions were examined by comparing the size composition (mm) of the lobsters measured at each site in 2012 and in 2018. Mean lobster size was compared for lobsters measured in MPAs versus unprotected waters in 2012 and in 2018 using two-sample t-tests ($\alpha$ = 0.5 throughout). For more information on site and data collection methods, see [metadata](https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.77.3).
+
+All data preparation and analyses were completed using R software (version 3.6.1) and RStudio (version 1.2.5001).
+
+
+***
+### Results 
+
+```{r packages and data wrangling}
+# Attach packages and read in the data
+library(tidyverse)
+library(janitor) 
+library(gghighlight)
+library(ggridges)
+library(effsize)
+library(ggjoy)
+library(kableExtra)
+library(ggrepel)
+
+lobster <- read_csv("lobster_abundance_sbc_lter.csv", # read in the csv
+                    na = c("-99999")) %>% # designate the -99999 entries as NAs 
+  clean_names() # change variable names to lowercase_snake_case
+  
+# Group observations to find lobster counts for each year
+lobster_counts <- lobster %>% 
+  group_by(year, site) %>%  # group the lobster data set first by year, then site
+  summarize( # create nice summary table
+    annual_abundance = sum(count)) %>% # column in table sum the count for each site each year
+  mutate(site2 = ifelse(site == "NAPL", "Naples",  # new column with full site names
+                   ifelse(site == "MOHK", "Mohawk",
+                   ifelse(site == "IVEE", "Isla Vista",
+                    ifelse(site == "CARP", "Carpinteria", "Arroyo Quemado"))))) %>% 
+  mutate(protection = ifelse(site %in% c("NAPL", "IVEE"), # new column with protected status
+                             "Marine Protected Area", 
+                             "Unprotected Area"))
+
+# Create data frame for labels for the abundance graph by filtering out everything but the final data points from above 
+lobster_count_label <- lobster_counts %>%
+  filter(year == "2018") # final points will be from 2018 since is the last year
+
+```
+
+#### Trends in annual lobster abundance following MPA creation in 2012
+
+The Isla Vista and Naples sites were declared MPAs in 2012, effectively eliminating fishing pressure for spiny lobsters in those areas. The trends in total annual lobster abundance for those two sites, as well as the three other unprotected sites, were compared for 2012-2018 (Fig. 2). 
+
+```{r abundance over time}
+# Visualize changes in annual lobster abundance at five sites over time
+ggplot(data = lobster_counts, aes(x = year, y = annual_abundance)) + 
+  geom_line(aes(color = site2, # add lines connecting points where the color depends on the sites
+                label = site2, # label also depends on site
+                linetype = protection)) + # type of line based on protected status (MPA vs not)
+  geom_label_repel(data = lobster_count_label, # label only the end of the lines (last point)
+                   box.padding = 0.5, # add extra padding around the box so they don't overlap
+                   size = 3, # make a little smaller
+                   nudge_x = 0.5, # nudge label to the right away from the lines
+                   min.segment.length = 5, # large min segment removes unnecessary extra lines
+                   show.legend = FALSE, # remove legend for labels 
+                   xlim = c(2012, 2020), # set limits to the x-axis for where the labels go
+                   aes(x = year, 
+                       y = annual_abundance,
+                       label = site2, # label is based on the site
+                       color = site2))+ # color of the label is based on the site
+  guides(color = "none") + # remove the extra legend based on the color
+  labs( # add nicer axis label titles
+    x = "Year",
+    y = "Annual Lobster Abundance",
+    linetype = NULL) + # remove title of the line type legend
+  theme_classic() + # classic theme for cleaner look
+  scale_x_continuous(limits = c(2012, 2019), # set limits to the x axis
+                     expand = c(0, 0.5)) + # expand a little to make room for labels
+  scale_y_continuous(limits = c(0, 1000), # set limits to the y axis
+                     expand = c(0,0)) + # don't expand past the limits
+  theme(
+    legend.position = c(0.35, 0.7), # change position of line type legend inside the plot
+    legend.background = element_rect(color = "white"), # make the legend background white
+    panel.grid.minor.x = element_blank(), # remove minor x gridlines
+    panel.grid.minor.y = element_blank()) # remove minor y gridlines 
+
+```
+
+***Figure 2.*** *Total annual abundance of CA spiny lobsters for 5 sites in the Santa Barbara Channel from 2012 to 2018. Solid lines indicate sites within marine protected areas (Isla Vista and Naples) and dashed lines indicate sites in unprotected areas (Carpinteria, Mohawk, and Arroyo Quemado).*
+
+```{r percent increase calculations}
+# Calculate percent increase in abudnace for different sites to use in results descriptions
+percent_increase <- lobster_counts %>%  # create new df "percent_increase"
+  filter(year %in% c("2012", "2018")) %>%  # only use data from 2012 and 2018
+  arrange(site) %>%  # arrange in order by site
+  group_by(site) %>% # group by site
+  mutate( # new column calculates the percent change between the current and previous row
+    pct_change = (annual_abundance/lag(annual_abundance) -1)*100
+  ) %>% 
+  select(site, pct_change) %>% # keep only site and new column
+  filter(!is.na(pct_change)) # filter out NAs (pct_change is only calculated every other column)
+  
+```
+
+All sites have similar annual lobster abundance in 2012 and show an overall increase by 2018, but the two sites in Marine Protected Areas (Isla Vista and Naples) show a much greater increase than the sites in unprotected areas (Arroyo Quemado, Carpinteria, and Mohawk). From 2012 to 2018, annual lobster abundance at the Isla Vista and Naples sites increased by 3538% and 4866%, respectively. Percent increases in annual abundance were much smaller at the unprotected sites: though Carpinteria showed a drastic increase from 2015-2017, the overall increase in annual abundance was an order of magnitude smaller than the MPA sites (339%), and the other unprotected sites had even smaller changes at 42% and 98% (Arroyo Quemado and Mohawk, respectively). 
+
+
+#### Shifts in lobster size distributions from 2012 to 2018
+
+```{r, echo=FALSE}
+# Convert lobster dataframe to tidy format subset for observations from 2012 and 2018 only
+lobster_distributions <- lobster %>% 
+  uncount(count) %>% # uncount since "count" includes multiple observations per row
+  mutate(year = as.factor(year)) %>% # coerce year as factor for later ordering
+  select(year, site, size_mm) %>% # keep year, site, and size columns
+  filter(year == "2012" | year == "2018") %>% # keep only data for 2012 and 2018
+  mutate(site2 = ifelse(site == "NAPL", "Naples", # rename with full site names
+                   ifelse(site == "MOHK", "Mohawk",
+                   ifelse(site == "IVEE", "Isla Vista",
+                    ifelse(site == "CARP", "Carpinteria", "Arroyo Quemado")))))
+
+# Order factors so that MPA sites are together and at the top of the following plot
+lobster_distributions$site2 <- ordered(lobster_distributions$site2, levels = c("Carpinteria", "Arroyo Quemado", "Mohawk", "Isla Vista", "Naples"))
+
+# Ridge plot comparing lobster size distrubutions at the 5 sites in 2012 and 2018
+ggplot(lobster_distributions, aes(x = size_mm, y = site2, fill = year))+
+  geom_joy(data = filter(lobster_distributions, year == "2012"), # plot 2012 data in joyplot
+           alpha = 0.4,   
+           scale = 0.9)+  
+  geom_joy(data = filter(lobster_distributions, year == "2018"), 
+           alpha = 0.4, 
+           scale = 0.9)+
+  theme_joy()+ # convenient theme settings for joyplot
+  theme_minimal()+
+  labs(x = "Carapace length (mm)", # add more reader-friendly labels
+       y = "Site",
+       fill = NULL) # remove the title for the legend
+  
+```
+
+***Figure 3.*** *Size distributions of the California Spiny Lobster at 5 sites in the Santa Barbara Channel (Naples and Isla Vista = within MPA; Mohawk, Arroyo Quemado, and Carpinteria = outside of MPA) in 2012 (red) and 2018 (blue). Sizes are measured as carapace length in mm.*
+
+
+Both sites within MPAs (Naples and Isla Vista) showed increases in lobster size distribution from 2012 to 2018 (Fig. 3). Size distributions of lobsters in the non-MPA sites (Mohawk reef, Carpinteria, and Arroyo Quemado) appear relatively similar in both 2012 and 2018.
+
+
+#### Statistical comparisons for CA spiny lobster monitoring efforts
+
+```{r part c mean size comparison, include=FALSE}
+# Create column in distribution frame designating mpa/non_mpa protected status
+mpa_comparison <- lobster_distributions %>% 
+  mutate(protection = if_else(site %in% c("IVEE", "NAPL"), "mpa", "non_mpa"))
+
+# Subset distribution data for year and status
+mpa_2012 <- mpa_comparison %>% 
+  filter(year == "2012" & protection == "mpa") # only MPA sites in 2012
+
+non_mpa_2012 <- mpa_comparison %>% 
+  filter(year == "2012" & protection == "non_mpa") # only non-MPA sites in 2012
+
+mpa_2018 <- mpa_comparison %>% 
+  filter(year == "2018" & protection == "mpa") # only MPA sites in 2018
+
+non_mpa_2018 <- mpa_comparison %>% 
+  filter(year == "2018" & protection == "non_mpa") # only non-MPA sites in 2018
+
+# Summary table of mean, sd, sample size of lobster size for later quick reference
+summary_calc <- mpa_comparison %>% 
+  group_by(year, protection) %>% 
+  summarize(
+    mean = mean(size_mm), 
+    sd = sd(size_mm),  
+    n = length(size_mm)
+  )
+
+# Designate lobster mean, SD, sample size as values for in-line referencing
+mean_mpa_2012 <- mean(mpa_2012$size_mm)
+mean_mpa_2018 <- mean(mpa_2018$size_mm)
+mean_non_mpa_2012 <- mean(non_mpa_2012$size_mm)
+mean_non_mpa_2018 <- mean(non_mpa_2018$size_mm)
+
+sd_mpa_2012 <- sd(mpa_2012$size_mm)
+sd_mpa_2018 <- sd(mpa_2018$size_mm)
+sd_non_mpa_2012 <- sd(non_mpa_2012$size_mm)
+sd_non_mpa_2018 <- sd(non_mpa_2018$size_mm)
+
+n_mpa_2012 <- length(mpa_2012$size_mm)
+n_mpa_2018 <- length(mpa_2018$size_mm)
+n_non_mpa_2012 <- length(non_mpa_2012$size_mm)
+n_non_mpa_2018 <- length(non_mpa_2018$size_mm)
+
+
+# Look at the data even though we just looked at it cause its good practice
+ggplot(data = mpa_comparison, aes(x = size_mm)) +
+  geom_histogram() +
+  facet_wrap(~year + ~protection)
+
+ggplot(data = mpa_comparison, aes(sample = size_mm)) +
+  geom_qq() +
+  facet_wrap(~year + ~protection)
+
+# Might not be normally distributed but sample sizes large enough that we know through the central limit theorem that the means will be normally distributed so ok to do parametric test
+
+
+# The following code conducts two-sample t-tests and cohen's d effect sizes for each question using the subsetted data from above:
+# For 2012 observations, is there a significant difference in lobster size between MPA and non-MPA sites?
+diff_2012_t <- t.test(mpa_2012$size_mm, non_mpa_2012$size_mm) 
+diff_2012_d <- cohen.d(mpa_2012$size_mm, non_mpa_2012$size_mm)
+
+# For 2018 observations, is there a significant difference in lobster size between MPA and non-MPA sites?
+diff_2018_t <- t.test(mpa_2018$size_mm, non_mpa_2018$size_mm)
+diff_2018_d <- cohen.d(mpa_2018$size_mm, non_mpa_2018$size_mm)
+
+# For MPA sites only, is there a significant difference in lobsters observed in 2012 vs. 2018?
+diff_mpa_t <- t.test(mpa_2012$size_mm, mpa_2018$size_mm)
+diff_mpa_d <- cohen.d(mpa_2012$size_mm, mpa_2018$size_mm)
+
+# For non-MPA sites only, is there a significant difference in lobsters observed in 2012 vs. 2018?
+diff_non_mpa_t <- t.test(non_mpa_2012$size_mm, non_mpa_2018$size_mm)
+diff_non_mpa_d <- cohen.d(non_mpa_2012$size_mm, non_mpa_2018$size_mm)
+
+```
+
+```{r percent changes for lobster size}
+# Calculate percent change in mean lobster sizes from 2012-2018
+perc_change_mpa <- mean_mpa_2018/mean_mpa_2012 # for mpa sites
+perc_change_nonmpa <- mean_non_mpa_2018/mean_non_mpa_2012 # for non-mpa sites
+
+# Comparison of mean lobster size between mpa and non-mpa sites in 2012 and 2018 
+mpa_vs_nonmpa_2012 <- mean_mpa_2012/mean_non_mpa_2012 # in 2012
+mpa_vs_nonmpa_2018 <- mean_mpa_2018/mean_non_mpa_2018 # in 2018
+
+
+# Note: size difference between 2012 and 2018
+
+```
+
+Immediately following establishment of the MPAs in 2012, mean lobster size at sites inside MPAs was significantly different from that observed for lobsters in unprotected waters (two-sample t-test, t(`r round(diff_2012_t$parameter, 2)`) = `r round(diff_2012_t$statistic, 2)`, *p* = `r round(diff_2012_t$p.value, 3)`), with lobsters measured inside MPAs roughly 10% smaller (Table 1). By 2018, mean lobster size inside MPAs still differed significantly from unprotected waters (two-sample t-test, t(`r round(diff_2018_t$parameter, 2)`) = `r round(diff_2018_t$statistic, 2)`, *p* < 0.001), however it was roughly 5% greater in the MPA sites. 
+
+Lobster size inside MPA sites increased significantly by an average of 15% from 2012 to 2018 (two-sample t-test, t(`r round(diff_mpa_t$parameter, 2)`) = `r round(diff_mpa_t$statistic, 2)`, *p* < 0.001)), while lobsters observed outside of MPAs showed a marginal non-significant decrease in mean size over the same time period (two-sample t-test, t(`r round(diff_non_mpa_t$parameter, 2)`) = `r round(diff_non_mpa_t$statistic, 2)`, *p* = `r round(diff_non_mpa_t$p.value, 2)`). 
+
+***Table 1.*** *California Spiny Lobster size statistics for monitoring efforts inside and outside of MPAs in the Santa Barbara Channel for 2012 and 2018.*
+```{r}
+# Create able for means, SD, and sample size of lobster sizes and abundances in 2012 and 2018
+table_data <- as.tibble(summary_calc) %>%  # use previously created table as base
+  select(protection, mean, sd, n) %>% # select only the necessary columns
+  mutate(protection = ifelse(protection == "mpa", "MPA", "Non-MPA")) # make more reader-friendly
+  
+# Use kableExtra package to make a nice table for the markdown document
+lobster_table <- table_data %>%  #
+  kable(col.names = c("Protection", "Mean Size (mm)", "Standard Deviation", "Sample Size")) %>% 
+  kable_styling(bootstrap_options = NULL, # style specfications 
+                full_width = F) %>% 
+  group_rows("2012", 1, 2) %>%  # add nice gorupings
+  group_rows("2018", 3, 4) 
+
+lobster_table
+```
+
+***
+### Summary 
+
+- Lobster abundances have increased from 2012 to 2018, with sites in MPAs showing much greater proportional increases than sites in unprotected areas (Fig. 2)
+- Size of lobsters in marine protected areas has increased from 2012 to 2018 (Fig. 3)
+- There is a significant difference in the size of lobsters in MPAs compared to unprotected waters (Table 1)
+
+***
+### References
+
+1. "California Marine Protected Areas (MPAs)". *California Department of Fish and Wildlife*, State of California, 2019. https://www.wildlife.ca.gov/Conservation/Marine/MPAs
+
+2. "MPA Monitoring." *California MPAs*. http://californiampas.org/mpa-monitoring
+
+3. Tegner, M. J., and L. A. Levin. "Spiny lobsters and sea urchins: analysis of a predator-prey interaction." Journal of Experimental Marine Biology and Ecology 73.2 (1983): 125-150.
+
+4. Ling, S. D., et al. "Global regime shift dynamics of catastrophic sea urchin overgrazing." Philosophical Transactions of the Royal Society B: Biological Sciences 370.1659 (2015): 20130269.
+
+5. Breen, P. A., and K. H. Mann. "Changing lobster abundance and the destruction of kelp beds by sea urchins." Marine Biology 34.2 (1976): 137-142.
+
+6. Wharton, W. G., and K. H. Mann. "Relationship between destructive grazing by the sea urchin, Strongylocentrotus droebachiensis, and the abundance of American lobster, Homarus americanus, on the Atlantic coast of Nova Scotia." Canadian Journal of Fisheries and Aquatic Sciences 38.11 (1981): 1339-1349.
+
+7. Reed D. 2019. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012. Environmental Data Initiative. https://doi.org/10.6073/pasta/a593a675d644fdefb736750b291579a0. Dataset accessed 11/14/2019.

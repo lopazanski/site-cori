@@ -1,0 +1,6 @@
+---
+title: "Gallery"
+summary: "About the page"
+date: "2/25/2020"
+type: "widget_page"
+---

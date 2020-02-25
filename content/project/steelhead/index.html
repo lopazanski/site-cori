@@ -1,0 +1,129 @@
+---
+title: "Using time series data to explore steelhead passage across the Bonneville Dam"
+author: "Cori Lopazanski"
+date: "2/17/2020"
+output: 
+  html_document:
+    code_folding: hide
+    theme: paper
+    toc: true
+---
+
+
+
+<hr />
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p>Steelhead are a fascinating group of fishes. They are the same species as freshwater rainbow trout (<em>Oncorhynchus mykiss</em>), but exhibit the salmon-esque behavior of swimming upstream from the ocean to spawn in the rivers where they were born. Interestingly, some even return back to the ocean after spawning - something salmon don’t even do! Monitoring populations of these special fish is important as they face increased threats due to climate change. This document explores time series data of the passage of steelhead across the Bonneville Dam in Oregon from 1940-2019.</p>
+<p>For an interesting read on the hot debate of if a steelhead should be considered a salmon or trout, check out <a href="https://www.cbc.ca/news/canada/british-columbia/salmon-or-trout-what-the-heck-is-a-steelhead-anyway-1.4461827">this article</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GoPNB-aA82E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><strong><em>Figure 1.</em></strong> Video of Bonneville Dam Fish Ladder. Provided by YouTube user: Pacific NW (<a href="https://www.youtube.com/watch?v=GoPNB-aA82E">source</a>)</p>
+<p>Data was retrieved from Columbia Basin Research DART (Data Access in Real Time), affiliated with the University of Washington. Counts are reported for fish crossing the Bonneville Dam fish ladder each day, either through live counts or video observations<sup>1</sup>. Data can be accessed <a href="http://www.cbr.washington.edu/dart/query/adult_graph_text">here</a>.</p>
+<hr />
+</div>
+<div id="initial-setup-data-wrangling" class="section level3">
+<h3>Initial setup &amp; data wrangling</h3>
+<pre class="r"><code># Attach necessary packages
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(paletteer)
+library(tsibble)
+library(fable)
+library(fabletools)
+library(feasts)
+
+# Read in data, clean up a bit!
+fish &lt;- read_csv(&quot;cbr_fish_passage_bonneville_allyrs_steelhead.csv&quot;) %&gt;% 
+  clean_names() %&gt;% 
+  mutate(day_month = mm_dd) %&gt;%  # R doesn&#39;t love the mm-dd naming
+  unite(&quot;date&quot;, &quot;year&quot;:&quot;mm_dd&quot;, sep = &quot;-&quot;) %&gt;%  # Combine year and month-day column
+  mutate(date = ydm(date),
+         year = year(date),
+         month = month(date, label = TRUE),
+         year_month = yearmonth(date)) %&gt;%  #yearmonth class important for ts seasonplot
+  filter(year %in% c(1940:2019)) # only observations from 1940-2019
+
+
+# Create a subset totaling the number of fish counted each month
+fish_month &lt;- fish %&gt;%
+  group_by(year_month) %&gt;% 
+  summarize(total = sum(value, na.rm = TRUE)) %&gt;% 
+  mutate(year = year(year_month),
+         month = month(year_month, label = TRUE),
+         fish = &quot;steelhead&quot;)
+
+# Coerce the fish_month data to a tsibble, which is friendlier for working with time series data
+fish_ts &lt;- as_tsibble(fish_month, key = fish, index = year_month)
+
+# Look at it!
+#autoplot(fish_ts)
+#gg_subseries(fish_ts)</code></pre>
+<hr />
+</div>
+<div id="exploring-time-series-of-steelhead-passage-daily-monthly-and-annually" class="section level3">
+<h3>Exploring time series of steelhead passage: daily, monthly, and annually</h3>
+<p>Counts of the number of steelhead crossing the Bonneville Dam each day show potential seasonality in fluctuations of the population (Fig. 2). There seems to be significant variation between years, as well as a general increasing trend between 1940 and 2019. This section will examine these trends more closely.</p>
+<pre class="r"><code># Basic plot of daily time series data
+ggplot(data = fish) +
+  geom_point(aes(x = date, y = value, color = year), 
+             show.legend = FALSE) +
+  theme_classic() +
+  labs(
+    x = NULL,
+    y = &quot;Number of steelhead counted per day&quot;) +
+  scale_y_continuous(limits = c(0, 35000), expand = c(0,0)) + # set y axis limits
+  scale_color_paletteer_c(&quot;ggthemes::Blue&quot;) </code></pre>
+<p><img src="/project/steelhead/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><strong><em>Figure 2.</em></strong> Time series data of steelhead crossings for the Bonneville Dam from 1940-2019.</p>
+<p>Closer examination reveals consistent seasonality in the timing of steelhead passage (Fig. 3) The highest number of steelhead counted is typically in the late summer months, usually around August, and has not shifted much between 1940 and 2019.</p>
+<pre class="r"><code># Create a season plot of a subset of the data to examine shift in the timing of fish passage
+ggplot(data = fish_month %&gt;% filter(year %in% c(1940, 1960,  1980, 2000, 2019)), aes(x = month, y = total, group = year)) +
+  geom_line(aes(color = year), show.legend = FALSE) +
+  facet_wrap(~ year, 
+             ncol = 1,  
+             scales = &quot;free&quot;,
+             strip.position = &quot;right&quot;)+
+  labs(x = NULL,
+       y = &quot;number of steelhead counted each month&quot;)+
+  scale_color_paletteer_c(&quot;ggthemes::Blue&quot;)+
+  theme_classic()</code></pre>
+<p><img src="/project/steelhead/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><strong><em>Figure 3.</em></strong> Timing of steelhead passage across the Bonneville Dam in 1940, 1960, 1980, 2000, 2019.</p>
+<p>Examining monthly counts for all years confirms the consistency in this timing (Fig. 4) but also highlights the interannual variation in the size of the population. The population peaks in late summer each year, but at very differrent levels.</p>
+<pre class="r"><code># Use gg_season to make a more traditional season-plot
+gg_season(fish_ts) + 
+  labs(x = NULL,
+       y = &quot;number of steelhead counted&quot;) +
+  scale_y_continuous(limits = c(0, 250000), expand = c(0,0)) +
+  theme_classic()+
+  scale_color_paletteer_c(&quot;ggthemes::Blue&quot;, direction = 1,
+                          labels = c(&quot;1940&quot;, &quot;1960&quot;, &quot;1980&quot;, &quot;2000&quot;, &quot;2019&quot;))</code></pre>
+<p><img src="/project/steelhead/index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><strong><em>Figure 4.</em></strong> Passage of steelhead across the Bonneville Dam. Shades of blue transition from light to dark over time - early years (1940s) are shown in light blue, and later years (2010s) in darker blues.</p>
+<p>There is significant interannual variability in the number of steelhead crossing the dam, as seen by the many peaks and troughs (Fig. 5 solid line), however this variability also follows a larger trend: the population saw significant increases in the late 1990s and early 2000s, but has since began to decline (Fig 5 dashed line and shaded area).</p>
+<pre class="r"><code>fish_year &lt;- fish_ts %&gt;% 
+  index_by(annual = ~year(.)) %&gt;% 
+  summarize(
+    avg_amount = mean(total))
+
+ggplot(data = fish_year, aes(x = annual, y = avg_amount)) +
+  geom_line(color = &quot;steelblue4&quot;) +
+  geom_smooth(color = &quot;steelblue4&quot;,
+              size = 0.2,
+              linetype = &quot;dashed&quot;,
+              fill = &quot;steelblue3&quot;,
+              alpha = 0.2) +
+  theme_classic() +
+  labs(x = NULL,
+       y = &quot;annual number of steelhead&quot;)</code></pre>
+<p><img src="/project/steelhead/index_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><strong><em>Figure 5.</em></strong> Annual passage of steelhead across the Bonneville Dam (solid line), overall trend using loess smoothing (dashed line), with 95% confidence intervals (shaded area).</p>
+</div>
+<div id="citations" class="section level2">
+<h2>Citations</h2>
+<ol style="list-style-type: decimal">
+<li>Columbia River DART, Columbia Basin Research, University of Washington. (2019). Adult Passage Graphics &amp; Text. Available from <a href="http://www.cbr.washington.edu/dart/query/adult_graph_text" class="uri">http://www.cbr.washington.edu/dart/query/adult_graph_text</a></li>
+</ol>
+</div>

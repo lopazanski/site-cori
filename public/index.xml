@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Best site EVER</title>
+    <title>Cori Lopazanski</title>
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    <description>Best site EVER</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <description>Cori Lopazanski</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
     <image>
       <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
-      <title>Best site EVER</title>
+      <title>Cori Lopazanski</title>
       <link>/</link>
     </image>
     
@@ -17,7 +17,7 @@
       <link>/courses/example/example1/</link>
       <pubDate>Sun, 05 May 2019 00:00:00 +0100</pubDate>
       <guid>/courses/example/example1/</guid>
-      <description>&lt;p&gt;In this tutorial, I&#39;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
+      <description>&lt;p&gt;In this tutorial, I&amp;rsquo;ll share my top 10 tips for getting started with Academic:&lt;/p&gt;
 &lt;h2 id=&#34;tip-1&#34;&gt;Tip 1&lt;/h2&gt;
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
 &lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
@@ -66,26 +66,11 @@
 &lt;/div&gt;
 &lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&#39;s &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Awesome Post</title>
-      <link>/project/my-new-project/</link>
-      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/project/my-new-project/</guid>
-      <description>
-
-
-&lt;p&gt;Here’s some sweet code!&lt;/p&gt;
-&lt;p&gt;An awesoe plot:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;plot(cars)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;/project/my-new-project/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -96,7 +81,7 @@
       <guid>/post/writing-technical-content/</guid>
       <description>&lt;p&gt;Academic is designed to give technical content creators a seamless experience. You can focus on the content and Academic handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;On this page, you&#39;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
+&lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Academic.&lt;/p&gt;
 &lt;h2 id=&#34;examples&#34;&gt;Examples&lt;/h2&gt;
 &lt;h3 id=&#34;code&#34;&gt;Code&lt;/h3&gt;
 &lt;p&gt;Academic supports a Markdown extension for highlighting code syntax. You can enable this feature by toggling the &lt;code&gt;highlight&lt;/code&gt; option in your &lt;code&gt;config/_default/params.toml&lt;/code&gt; file.&lt;/p&gt;
@@ -313,7 +298,7 @@ A Markdown aside is useful for displaying notices, hints, or definitions to your
       <guid>/publication/preprint/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
@@ -354,7 +339,7 @@ date: 2019-09-01
 ---
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Edit the metadata of your post, using the &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content&#34;&gt;documentation&lt;/a&gt; as a guide to the available options.&lt;/p&gt;
-&lt;p&gt;To set a &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&#39;s folder.&lt;/p&gt;
+&lt;p&gt;To set a &lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#featured-image&#34;&gt;featured image&lt;/a&gt;, place an image named &lt;code&gt;featured&lt;/code&gt; into your post&amp;rsquo;s folder.&lt;/p&gt;
 &lt;p&gt;For other tips, such as using math, see the guide on &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;writing content with Academic&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;convert-notebook-to-markdown&#34;&gt;Convert notebook to Markdown&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;jupyter nbconvert index.ipynb --to markdown --NbConvertApp.output_files_dir=.
@@ -477,7 +462,7 @@ Three
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-&lt;p&gt;Let&#39;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
 &lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
 .reveal section h2,
@@ -511,33 +496,12 @@ Three
     </item>
     
     <item>
-      <title>External Project</title>
-      <link>/project/external-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/external-project/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Academic: the website builder for Hugo</title>
       <link>/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       <guid>/post/getting-started/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&#39;ll get in less than 10 minutes, or &lt;a href=&#34;https://sourcethemes.com/academic/#expo&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href=&#34;https://sourcethemes.com/academic/#expo&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;👉 &lt;a href=&#34;#install&#34;&gt;&lt;strong&gt;Get Started&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;📚 &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34;&gt;View the &lt;strong&gt;documentation&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
@@ -641,7 +605,7 @@ Three
 &lt;/div&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
@@ -710,10 +674,759 @@ Figure 1: A fancy pie chart.
 &lt;/div&gt;
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
-    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&#39;s Markdown slides feature.
+    Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A case study in population fluctuations: snowshoe hares in Bonanza Creek Experimental Forest, Alaska</title>
+      <link>/project/bonanza-creek-hares/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/bonanza-creek-hares/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;hr /&gt;
+&lt;div id=&#34;section&#34; class=&#34;section level2 tabset&#34;&gt;
+&lt;h2&gt;&lt;/h2&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Snowshoe hares experience population fluctuations approximately every 8-11 years&lt;sup&gt;1&lt;/sup&gt;. This document explores the population dynamics of hares tagged in Bonanza Creek Experimental Forest, Alaska between 1998 and 2012. It shows how the abundance has changed, and compares the average weight of hares in the years of lowest and highest abundance.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;hare.jpg&#34; alt=&#34;Figure 1. Snowshoe hare, Lepus americanus. Photo Credit: National Park Service (source)&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;strong&gt;&lt;em&gt;Figure 1.&lt;/em&gt;&lt;/strong&gt; Snowshoe hare, &lt;em&gt;Lepus americanus&lt;/em&gt;. Photo Credit: National Park Service (&lt;a href=&#34;https://nsf.gov/discoveries/disc_summ.jsp?cntn_id=244505&#34;&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;bonanza.jpg&#34; alt=&#34;Figure 2. Location of Bonanza Creek Experimental Forest, approximately 20 km southwest of Fairbanks, Alaska. Map Credit: Bonanza Creek LTER (source)&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;strong&gt;&lt;em&gt;Figure 2.&lt;/em&gt;&lt;/strong&gt; Location of Bonanza Creek Experimental Forest, approximately 20 km southwest of Fairbanks, Alaska. Map Credit: Bonanza Creek LTER (&lt;a href=&#34;https://www.lter.uaf.edu/research/study-sites-overview&#34;&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;initial-data-wrangling&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Initial Data Wrangling&lt;/h3&gt;
+&lt;p&gt;This section contains the code used to read-in and manipulate the dataset provided by the Bonanza Creek Long Term Ecological Research Program for the subsequent visualizations and analyses.&lt;/p&gt;
+&lt;p&gt;Note: This dataset includes information about the number of hares tagged in Bonanza Creek Experimental Forest. For the sake of this document, it will be assumed that the number of hares tagged translates directly to the size of the overall population.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Attach Packages 
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(kableExtra)
+
+# Read in data, initial wrangling to select necessary columns
+hare &amp;lt;- read_csv(&amp;quot;showshoe_lter.csv&amp;quot;) %&amp;gt;% 
+  select(date, sex, age, weight, b_key, grid) %&amp;gt;% 
+  mutate(date = mdy(date),
+         year = year(date),
+         month = month(date))
+
+
+# Create data frame to see population change over time
+yearly_timeline &amp;lt;- hare %&amp;gt;%
+  group_by(year) %&amp;gt;% 
+  summarize(
+    count = n(),
+    avg_wt = mean(weight, na.rm = TRUE))&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visualization&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Visualization&lt;/h3&gt;
+&lt;p&gt;Snowshoe hares experience population fluctuations every 8-11 years&lt;sup&gt;1&lt;/sup&gt;. Figure 1 illustrates this concept by showing the annual abundances of hares tagged in Bonanza Creek Experimental Forest from 1998-2012. Populations were high in 1999 (nearly 400 hares tagged), but decreased drastically to a low of 29 in 2002. Following this low, the population gradually increased even higher - by 2009, there were 439 hares taggged.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Use ggplot to create a graph showing changes in annual abundance
+ggplot(data = yearly_timeline) + # use data frame from previous tab
+  geom_path(aes(x = year, y = count), color = &amp;quot;red&amp;quot;)+ 
+  scale_x_continuous(limits = c(1998, 2012), # set limits to x and y axis
+                     breaks = c(1998:2012), 
+                     expand = c(0,.5)) +
+  scale_y_continuous(limits = c(0, 500), 
+                     expand = c(0,0))+
+  labs( # add reader-friendly labels
+    y = &amp;quot;Number of hares trapped&amp;quot;,
+    x = &amp;quot;year&amp;quot;) +
+  theme_classic() # simple theme&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/bonanza-creek-hares/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 3.&lt;/em&gt;&lt;/strong&gt; Annual abundances of tagged snowshoe hares in the Bonanza Creek Experimental Forest from 1998 to 2012.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;statistical-comparison&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Statistical Comparison&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Data frame to compare just the weights
+weight &amp;lt;- hare %&amp;gt;% 
+  filter(year %in% c(2002,2009)) %&amp;gt;% 
+  select(year, weight)
+
+# Look at the data to see how they are distributed
+# ggplot(data = weight, aes(x = weight)) +
+#  geom_histogram()+
+#  facet_wrap(~year, scales = &amp;quot;free&amp;quot;) 
+
+# Lack of data (because lack of hares) in 2002 - not as nicely distributed but still probably OK
+# ggplot(data = weight, aes(sample = weight)) + 
+#  geom_qq()+
+#  facet_wrap(~year)
+
+#Since the majority seem normal, will still do a two-sample t-test to compare means.
+weight_2002 &amp;lt;- weight %&amp;gt;% 
+  filter(year == &amp;quot;2002&amp;quot;)
+weight_2009 &amp;lt;- weight %&amp;gt;% 
+  filter(year == &amp;quot;2009&amp;quot;)
+
+weight_t &amp;lt;- t.test(weight_2009$weight, weight_2002$weight)
+
+# Alternative for non-parametric data would be the Mann-Whitney U (just try out of curiosity) - compares medians
+weight_rank &amp;lt;- wilcox.test(weight_2002$weight, weight_2009$weight)
+
+# Both are insignificant results - meaning that there isn&amp;#39;t a significant difference in the means or medians
+
+# Create data frame &amp;quot;diff&amp;quot; to compare lowest abundance (2002) to highest (2009)
+diff &amp;lt;- hare %&amp;gt;% 
+  filter(year %in% c(2002, 2009)) %&amp;gt;% 
+  group_by(year) %&amp;gt;% 
+  summarize(
+    &amp;quot;Abundance&amp;quot; = n(),
+    &amp;quot;Average Weight (g)&amp;quot; = mean(weight, na.rm = TRUE)) %&amp;gt;% 
+  pivot_longer(&amp;quot;Abundance&amp;quot;:&amp;quot;Average Weight (g)&amp;quot;, 
+               names_to = &amp;quot;metric&amp;quot;, 
+               values_to = &amp;quot;value&amp;quot;) %&amp;gt;% 
+  pivot_wider(id_cols = metric, 
+              names_from = year, 
+              values_from = value) %&amp;gt;% 
+  rename(y2002 = &amp;quot;2002&amp;quot;) %&amp;gt;%  # Rename for friendlier calculations in subsequent steps
+  rename(y2009 = &amp;quot;2009&amp;quot;) %&amp;gt;% 
+  mutate(pct_diff = round(((y2009-y2002)/y2002)*100, 1)) %&amp;gt;% # calculate percent difference
+  mutate(pct_diff = paste(pct_diff, &amp;quot;%&amp;quot;, sep = &amp;quot;&amp;quot;)) %&amp;gt;% # add &amp;quot;%&amp;quot; to those calculated values
+  mutate_if(is.numeric, format, digits = 1, nsmall = 0) # restrict number of decimal places
+
+
+
+# Use kableExtra to make a nicely-formatted table 
+kable(diff, col.names = c(&amp;quot;&amp;quot;, &amp;quot;2002&amp;quot;, &amp;quot;2009&amp;quot;, &amp;quot;Percent Increase&amp;quot;)) %&amp;gt;%
+        kable_styling(bootstrap_options = c(&amp;quot;striped&amp;quot;, &amp;quot;hover&amp;quot;), 
+                full_width = F) %&amp;gt;% 
+add_header_above(c(&amp;quot;Table 1: Extreme fluctuations in the snowshoe hare population in Bonanza Creek Experimental Forest, Alaska&amp;quot; = 4))&lt;/code&gt;&lt;/pre&gt;
+&lt;table class=&#34;table table-striped table-hover&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; &#34; colspan=&#34;4&#34;&gt;
+&lt;div style=&#34;border-bottom: 1px solid #ddd; padding-bottom: 5px; &#34;&gt;
+Table 1: Extreme fluctuations in the snowshoe hare population in Bonanza Creek Experimental Forest, Alaska
+&lt;/div&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+2002
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+2009
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Percent Increase
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Abundance
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+38
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+491
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1192.1%
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Average Weight (g)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1202
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+1338
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+11.3%
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Examining the abundance of hares over time showed that the population declined to an extreme low in 2002, but increased by 1192% to a new peak in 2009 (Figure 1, Table 1). The average weight of the hares increased slightly from 2002 to 2009 (11%), but the difference is insignificant (two sample t-test, t(36.28) = 1.9, &lt;em&gt;p&lt;/em&gt; = 0.066).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;citations-and-additional-exploratory-code&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Citations and Additional Exploratory Code&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Kielland K., F. S. Chapin, R. W. Ruess. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present. Environmental Data Initiative. &lt;a href=&#34;https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14&#34; class=&#34;uri&#34;&gt;https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14&lt;/a&gt;. Dataset accessed 1/30/2020.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Exploratory Code Not Used for Final Document 
+# Examine and visualize monthly fluctuations in hare abundance
+monthly_timeline &amp;lt;- hare %&amp;gt;%
+  group_by(month) %&amp;gt;% 
+  summarize(
+    count = n(),
+    avg_wt = mean(weight, na.rm = TRUE))
+
+ggplot(data = monthly_timeline) +
+  geom_point(aes(x = month, y = count)) +
+  geom_line(aes(x = month, y = avg_wt))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/bonanza-creek-hares/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# What if we follow weights of individual hares through time?
+individual &amp;lt;- hare %&amp;gt;% 
+  filter(!is.na(weight), !is.na(b_key)) %&amp;gt;% 
+  group_by(b_key) %&amp;gt;% 
+  summarize(
+    count = n() # There are 9 that have been seen and weighed at least 15x
+  ) %&amp;gt;% 
+  arrange(-count) %&amp;gt;% 
+  head(9) 
+
+weights &amp;lt;- hare %&amp;gt;% 
+  filter(b_key %in% individual$b_key &amp;amp; !is.na(weight)) %&amp;gt;% 
+  mutate(id = as.factor(b_key))
+
+ggplot(data = weights) +
+  geom_path(aes(x = date, y = weight, color = id))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/bonanza-creek-hares/index_files/figure-html/unnamed-chunk-4-2.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;paletteer, tsibble, feasts, fable, fabletools, forecast, and mapview&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data Projects</title>
+      <link>/data-sci/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/data-sci/</guid>
+      <description>
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Examining global environmental data with principal component analysis</title>
+      <link>/project/env_data_pca/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/env_data_pca/</guid>
+      <description>
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;This document explores the relationship between various environmental variables for 224 different countries. It will use principal component analysis to illustrate how characteristics like elevation, rainfall, and amount of cropland relate to each other at global scale.&lt;/p&gt;
+&lt;p&gt;About the data: this document uses data compiled and provided by &lt;span class=&#34;citation&#34;&gt;@zanter_venter&lt;/span&gt;, who synthesized country-level statistics using the Google Earth Engine. Data can be found &lt;a href=&#34;https://www.kaggle.com/zanderventer/environmental-variables-for-world-countries&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-analysis&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Data Analysis&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Attach packages
+library(tidyverse)
+library(janitor)
+library(ggfortify)
+
+# Read in the world environment data:
+world_data &amp;lt;- read_csv(&amp;quot;world_env_vars.csv&amp;quot;) %&amp;gt;% 
+  select(elevation, cropland_cover, tree_canopy_cover, rain_mean_annual, temp_mean_annual, cloudiness) %&amp;gt;% 
+  rename(&amp;quot;Elevation&amp;quot; = elevation, # Rename variables for plot label friendliness later
+         &amp;quot;Cropland Cover&amp;quot; = cropland_cover,
+         &amp;quot;Tree Canopy Cover&amp;quot; = tree_canopy_cover,
+         &amp;quot;Mean Annual Rainfall&amp;quot; = rain_mean_annual,
+         &amp;quot;Mean Annual Temperature&amp;quot; = temp_mean_annual,
+         &amp;quot;Cloudiness&amp;quot; = cloudiness)
+
+# Evaluate missing data situation
+# summary(world_data)
+
+# None of the chosen variables have too many NAs (11 is max) compared to data set - will drop those
+world_data &amp;lt;- world_data %&amp;gt;% 
+  drop_na()
+
+# PConduct pca and save, scale = TRUE to convert to similar scales
+world_pca &amp;lt;- prcomp(world_data, scale = TRUE)
+
+# Use ggfortify to make a biplot
+autoplot(world_pca,
+         colour = NA,
+         loadings.colour = &amp;quot;forestgreen&amp;quot;, # change color of eigenvectors
+         loadings.label = TRUE, 
+         loadings.label.size = 3,
+         loadings.label.colour = &amp;quot;black&amp;quot;,
+         loadings.label.repel = TRUE) +
+  theme_minimal()+
+  scale_y_continuous(limits = c(-0.2, 0.2), expand = c(0,0)) + # set limits to scale of x and y axis
+  scale_x_continuous(limits = c(-0.2, 0.2), expand = c(0,0))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/env_data_pca/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 1.&lt;/em&gt;&lt;/strong&gt; Biplot resulting from principal component anlaysis conducted on world environmental data. Green arrows indicate strength and relationship of variables labeled.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Elevation and cropland cover are highly positively correlated with each other&lt;/li&gt;
+&lt;li&gt;Mean annual temperature is negatively correlated with elevation and cropland cover&lt;/li&gt;
+&lt;li&gt;Mean annual rainfall, canopy cover, and cloudiness are positively correllated with each other and minimally correlated with the other three variables&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Gallery</title>
+      <link>/gallery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/gallery/</guid>
+      <description>
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Landing Page</title>
+      <link>/experience/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/experience/</guid>
+      <description>
+
+
+&lt;p&gt;Here’s landing page stuff&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Population characteristics of the Pacific giant salamander in old growth vs clear cut forests</title>
+      <link>/project/salamanders/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/salamanders/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Amphibian populations have been declining for over half a century&lt;sup&gt;1&lt;/sup&gt;, with more than 32% of global populations currently threatened&lt;sup&gt;2&lt;/sup&gt;. Habitat loss and fragmentation are among the biggest threats to these fragile populations, which require particular temperatures and levels of moisture to survive&lt;sup&gt;3&lt;/sup&gt;. Clear-cut logging, in particular, has been shown to increase sedimentation in streams, which negatively impacts larval amphibians&lt;sup&gt;3&lt;/sup&gt;. Monitoring efforts have been implemented to assess how activities like clear-cutting affect salmonid populations, including the Aquatic Vertebrate Population Study within the H.J. Andrews Forest Long Term Ecological Research Program (HJA LTER), which monitors the threatened Pacific giant salamander (&lt;em&gt;Dicamptodon tenebrosus&lt;/em&gt;) among other species. Here, we examine the distribution of Pacific giant salamanders in a section of forest that was clear-cut for logging in 1963 compared to a nearby 500 year old coniferous forest in Mack Creek, Oregon. Restoration efforts are sometimes used to attempt to convert habitats from a degraded state back to their pre-disturbance condition, typically by creating pools or increasing habitat complexity&lt;sup&gt;4&lt;/sup&gt;. Understanding how the distribution of Pacific giant salamanders changes in different habitats can help guide restoration efforts.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;salamander.jpg&#34; alt=&#34;Figure 1. Pacific giant salamander, Dicamptodon tenebrosus. Photographer: Joel Sartore, National Geographic Photographer (source)&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;strong&gt;&lt;em&gt;Figure 1.&lt;/em&gt;&lt;/strong&gt; Pacific giant salamander, &lt;em&gt;Dicamptodon tenebrosus&lt;/em&gt;. Photographer: Joel Sartore, National Geographic Photographer (&lt;a href=&#34;https://www.joelsartore.com/ani067-00279/&#34;&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/mmm1Ml4sHE4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 2.&lt;/em&gt;&lt;/strong&gt; Video of Pacific giant salamander. These are some of the only amphibians known to make vocalizations. Provided by YouTube user: MFWestphal (&lt;a href=&#34;https://youtu.be/mmm1Ml4sHE4&#34;&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-and-methods&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Data and Methods&lt;/h3&gt;
+&lt;p&gt;As part of an effort to monitor population trends of aquatic vertebrates in the H.J. Andrews Experimental Forest, data on annual abundances, weights, forest section location, and habitat preferences of the Pacific giant salamander have been collected by researchers with the Andrews Forest Long Term Ecological research site since 1993&lt;sup&gt;5&lt;/sup&gt;. Mack Creek runs through sections of both old growth and historically clear-cut forest and provides three primary types of habitat for aquatic organisms (pools, side-channels, and cascades). 150m stretches of the creek are divided into contiguous 50m sections, which were netted at each end. Observations for aquatic vertebrates were acquired via two-pass electrofishing, followed by subsequent measurement of body dimensions and weight for all captured individuals.&lt;/p&gt;
+&lt;p&gt;We compared annual abundances since 1993, and habitat preferences and weight differences in 2017 for Pacific giant salamanders in old growth and clear cut sections of forest. We used a Chi-square test to assess salamander habitat preferences within forest sections, a two-sample t-test test to compare mean weights by forest section, and a one-way ANOVA to compare mean weights of salamanders across the three primary habitat types. For all statistical tests, we used a significance level of &lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; = 0.05. All data preparation and analyses were completed using R software (version 3.6.1) and RStudio (version 1.2.5001).&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;HJ_andrews_national_forest_map.png&#34; alt=&#34;Figure 3. Map of H. J. Andrews Experimental Forest with associated streams. Streams are depicted as blue lines and sample locations as green circles. This report focuses on salamanders found in Mack Creek. Picture credit: Sashka Warner. (source)&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;strong&gt;&lt;em&gt;Figure 3.&lt;/em&gt;&lt;/strong&gt; Map of H. J. Andrews Experimental Forest with associated streams. Streams are depicted as blue lines and sample locations as green circles. This report focuses on salamanders found in Mack Creek. Picture credit: Sashka Warner. (&lt;a href=&#34;https://www.researchgate.net/publication/324601050_Interactions_of_Roads_and_Deforestation_with_Stream_Sediment_Size_and_Network_Structure_in_the_Western_Cascade_Range_of_Oregon/figures?lo=1&#34;&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Results&lt;/h3&gt;
+&lt;div id=&#34;pacific-giant-salamander-abundance-over-time&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Pacific giant salamander abundance over time&lt;/h4&gt;
+&lt;p&gt;Trends in Pacific giant salamander abundance were compared for the clear cut and old growth sections of Mack Creek from 1993 to 2017 (Figure 4). Throughout 1993-2017, Pacifc giant salamander abundances observed in sections of old growth forest were consistently higher than in historically clear-cut sections, with exceptions to this trend in 1994 and 2014-2017. Both populations show a marked increase in abundance following 2001 and 2014, as well as a sharp decline in 2011. Overall, populations of salamanders increased from 1993 to 2017 by 154% in the old growth section, and 192% in the clear cut section.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/salamanders/index_files/figure-html/part%20A-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 4.&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;Annual abundances of the Pacific giant salamander in two standard reaches of Mack Creek in the H. J. Andrews Experimental Forest from 1993 -2017. Salamanders were counted in a reach running through a section of old growth forest (blue line) and a section of historically clear-cut forest (red line).&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;salamander-habitat-preference-within-old-growth-vs-clear-cut-forest-sections&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Salamander habitat preference within old growth vs clear cut forest sections&lt;/h4&gt;
+&lt;table class=&#34;table table-striped table-hover&#34; style=&#34;width: auto !important; float: right; margin-left: 10px;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;border-bottom:hidden; padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; &#34; colspan=&#34;3&#34;&gt;
+&lt;div style=&#34;border-bottom: 1px solid #ddd; padding-bottom: 5px; &#34;&gt;
+Table 1: Proportions of giant salamanders &lt;br&gt;in different channel classifications &lt;br&gt;observed in two sections of Mack Creek
+&lt;/div&gt;
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Clear Cut
+&lt;/th&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Old Growth
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Cascade
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+247 (67.1%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+201 (62.8%)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Pool
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+31 (8.4%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+45 (14.1%)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+Side-Channel
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+90 (24.5%)
+&lt;/td&gt;
+&lt;td style=&#34;text-align:left;&#34;&gt;
+74 (23.1%)
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Channels that make up Pacific giant salamander habitat are often classified into three different areas: cascades, pools, and side channels. Proportions of salamanders in each channel classification were compared for the old growth and clear cut sections of Mack Creek (Table 1).&lt;/p&gt;
+&lt;p&gt;There is not a significant effect of forest section (old growth or clear cut) on where salamanders are found in the channel (&lt;span class=&#34;math inline&#34;&gt;\(\chi\)&lt;/span&gt;&lt;sup&gt;2&lt;/sup&gt;(2) = 5.54, p = 0.06). There are similar proportions of salamanders found in each of the three channel classifications in both the clear-cut and old growth sections of forest (Table 1).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;comparison-of-salamander-weight-by-forest-section-and-channel-classification&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Comparison of salamander weight by forest section and channel classification&lt;/h4&gt;
+&lt;p&gt;In addition to abundance, examining salamander weight can yield more information about the size distribution of the populations in the different forest sections and channel classifications.&lt;/p&gt;
+&lt;p&gt;There was no significant difference in mean salamander weight in 2017 for the old growth compared to the clear cut section of forest (two sample t-test, t(692.79) = -1.67, &lt;em&gt;p&lt;/em&gt; = 0.096). Thus, weight information was combined for the two sections to examine size distributions across the diffferent channel classifications (Figure 5).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/salamanders/index_files/figure-html/part%20E.1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 5. &lt;/em&gt;&lt;/strong&gt; &lt;em&gt;Distributions for Giant Pacific Salamander mass (g) are displayed (violins) for habitat type, pooled for old growth and clear cut sections of forest. Mean masses (black dots) &lt;span class=&#34;math inline&#34;&gt;\(\pm\)&lt;/span&gt; standard error (error bars) are displayed for each habitat type.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Mean weights of Pacific giant salamanders did differ significantly between pools and side channels (one-way ANOVA with post-hoc Tukey’s HSD: F&lt;span class=&#34;math inline&#34;&gt;\(_{2,684}\)&lt;/span&gt; = 4.22, &lt;em&gt;p&lt;/em&gt; = 0.015). Mean weights for individuals from cascades did not differ significantly from the other two habitat types (Figure 5). The average weight for populations residing in pools (9.3 &lt;span class=&#34;math inline&#34;&gt;\(\pm\)&lt;/span&gt; 1.56 g) was 63.79% more than that of populations observed in side-channels (5.68 &lt;span class=&#34;math inline&#34;&gt;\(\pm\)&lt;/span&gt; 0.65 g). Due to large within group variation of salamander weights in each habitat type, an alternative metric – population medians, for instance – may lend to a more meaningful and accurate comparison across these groups. This could be achieved by using a rank-based test, such as a Mann-Whitney U test.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;From 1993-2017, overall Pacific giant salamander abundances increased in both old growth and historically clear cut sections of forest, by 154% and 192% respectively (Figure 4).&lt;/li&gt;
+&lt;li&gt;Forest section (old growth vs clear cut) did not significantly affect the habitat type (pool, cascade, or side-channel) in which salamnders were found (Table 1).&lt;/li&gt;
+&lt;li&gt;There is no significant difference in mean salamander weight in 2017 for the old growth compared to the clear cut section of forest.&lt;/li&gt;
+&lt;li&gt;In 2017, the mean weight of salamanders residing in pools was significantly greater than that of populations in side channels (Figure 5).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;Houlahan, J., et al. “Quantitative evidence for global amphibian population declines.” Nature 404 (2000): 752-755.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Stuart, S. N., et al. “Status and trends of amphibian declines and extinctions worldwide.” Science 306 (2004): 1783-1786.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Johnston, B. and Frid, L. “Clearcut logging restricts the movements of terrestrial Pacific giant salamanders (Dicamptodon tenebrosus Good)” Canadian Journal of Zoology 80 (2011): 2170-2177.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;IDK WHICH ONE IT IS CAUSE YOU CANT GET ACCESS OFF CAMPUS WHICH IS DUMB SO GUESS ILLL DO IT TOMORROW&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Gregory S. V. 2016. Aquatic Vertebrate Population Study in Mack Creek, Andrews Experimental Forest, 1987 to present. Environmental Data Initiative. &lt;a href=&#34;https://doi.org/10.6073/pasta/5de64af9c11579266ef20da2ff32f702&#34; class=&#34;uri&#34;&gt;https://doi.org/10.6073/pasta/5de64af9c11579266ef20da2ff32f702&lt;/a&gt;. Dataset accessed 11/19/2019.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Spiny lobster size and abundance along the Santa Barbara coast</title>
+      <link>/project/lobster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/lobster/</guid>
+      <description>
+&lt;script src=&#34;/rmarkdown-libs/kePrint/kePrint.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;hr /&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Marine Protected Areas (MPAs) have been established along the California coast to protect coastal species and their habitat through regulation of fishing and other potentially harmful human activities&lt;sup&gt;1&lt;/sup&gt;. Monitoring efforts have been implemented to assess the effectiveness of these MPAs by comparing population characteristics of species inside and outside of the protected areas&lt;sup&gt;2&lt;/sup&gt;. One such effort, undertaken by the Santa Barbara Coastal Long Term Ecological Research (SBC LTER) program, conducts yearly monitoring of kelp forest species in the Santa Barbara Channel inside and outside of MPAs. Within the Santa Barbara Channel, the California Spiny Lobster (&lt;em&gt;Panulirus interruptus&lt;/em&gt;) is currently a species of interest, as it provides a lucrative fishery but also serves an important role in maintaining kelp forest ecosystems through predation of sea urchins&lt;sup&gt;3&lt;/sup&gt;. Without predatory regulation, sea urchins can reach abundances high enough to decimate kelp populations and induce unfavorable ecosystem shifts from kelp forests to urchin barrens&lt;sup&gt;4&lt;/sup&gt;. Excessive fishing of other species of lobster has been implicated in causing subsequent overgrazing of macroalgal communities by sea urchins&lt;sup&gt;5,&lt;/sup&gt; &lt;sup&gt;6&lt;/sup&gt;. Here, we assess impacts of fishing pressure on population characteristics of the California Spiny lobster from 2012-2018.&lt;/p&gt;
+&lt;div class=&#34;figure&#34;&gt;
+&lt;img src=&#34;lobster.jpg&#34; alt=&#34;Figure 1: California Spiny Lobster, Panulirus interruptus. Photographer: Joel Sartore, National Geographic Photographer (source)&#34; /&gt;
+&lt;p class=&#34;caption&#34;&gt;&lt;strong&gt;&lt;em&gt;Figure 1:&lt;/em&gt;&lt;/strong&gt; California Spiny Lobster, &lt;em&gt;Panulirus interruptus&lt;/em&gt;. Photographer: Joel Sartore, National Geographic Photographer (&lt;a href=&#34;https://www.joelsartore.com/inv002-00049/&#34;&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data-and-methods&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Data and methods&lt;/h3&gt;
+&lt;p&gt;Data for California spiny lobster abundance and size were collected and provided by researchers with the Santa Barbara Coastal Long-Term Ecological Research Program (SBC LTER)&lt;sup&gt;7&lt;/sup&gt;. Divers collected annual estimates from 2012-2018 at five long-term kelp forest sites. Two sites (Naples and Isla Vista) are located in designated MPAs, which were created on 2012-01-01. The other three sites (Mohawk Reef, Carpinteria, and Arroyo Quemado) are located in unprotected areas. Estimates were collected annually in late summer, before the start of the fishing season, by counting lobsters to quantify abundance and visually estimating the carapace length (mm) for size information across a 40-meter transect at the five sites.&lt;/p&gt;
+&lt;p&gt;Changes in annual lobster abundance over time were examined for each site by comparing the total lobster count for each year from 2012-2018. Size distributions were examined by comparing the size composition (mm) of the lobsters measured at each site in 2012 and in 2018. Mean lobster size was compared for lobsters measured in MPAs versus unprotected waters in 2012 and in 2018 using two-sample t-tests (&lt;span class=&#34;math inline&#34;&gt;\(\alpha\)&lt;/span&gt; = 0.5 throughout). For more information on site and data collection methods, see &lt;a href=&#34;https://portal.edirepository.org/nis/metadataviewer?packageid=knb-lter-sbc.77.3&#34;&gt;metadata&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All data preparation and analyses were completed using R software (version 3.6.1) and RStudio (version 1.2.5001).&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;results&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Results&lt;/h3&gt;
+&lt;div id=&#34;trends-in-annual-lobster-abundance-following-mpa-creation-in-2012&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Trends in annual lobster abundance following MPA creation in 2012&lt;/h4&gt;
+&lt;p&gt;The Isla Vista and Naples sites were declared MPAs in 2012, effectively eliminating fishing pressure for spiny lobsters in those areas. The trends in total annual lobster abundance for those two sites, as well as the three other unprotected sites, were compared for 2012-2018 (Fig. 2).&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/project/lobster/index_files/figure-html/abundance%20over%20time-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 2.&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;Total annual abundance of CA spiny lobsters for 5 sites in the Santa Barbara Channel from 2012 to 2018. Solid lines indicate sites within marine protected areas (Isla Vista and Naples) and dashed lines indicate sites in unprotected areas (Carpinteria, Mohawk, and Arroyo Quemado).&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;All sites have similar annual lobster abundance in 2012 and show an overall increase by 2018, but the two sites in Marine Protected Areas (Isla Vista and Naples) show a much greater increase than the sites in unprotected areas (Arroyo Quemado, Carpinteria, and Mohawk). From 2012 to 2018, annual lobster abundance at the Isla Vista and Naples sites increased by 3538% and 4866%, respectively. Percent increases in annual abundance were much smaller at the unprotected sites: though Carpinteria showed a drastic increase from 2015-2017, the overall increase in annual abundance was an order of magnitude smaller than the MPA sites (339%), and the other unprotected sites had even smaller changes at 42% and 98% (Arroyo Quemado and Mohawk, respectively).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;shifts-in-lobster-size-distributions-from-2012-to-2018&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Shifts in lobster size distributions from 2012 to 2018&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;/project/lobster/index_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 3.&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;Size distributions of the California Spiny Lobster at 5 sites in the Santa Barbara Channel (Naples and Isla Vista = within MPA; Mohawk, Arroyo Quemado, and Carpinteria = outside of MPA) in 2012 (red) and 2018 (blue). Sizes are measured as carapace length in mm.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Both sites within MPAs (Naples and Isla Vista) showed increases in lobster size distribution from 2012 to 2018 (Fig. 3). Size distributions of lobsters in the non-MPA sites (Mohawk reef, Carpinteria, and Arroyo Quemado) appear relatively similar in both 2012 and 2018.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;statistical-comparisons-for-ca-spiny-lobster-monitoring-efforts&#34; class=&#34;section level4&#34;&gt;
+&lt;h4&gt;Statistical comparisons for CA spiny lobster monitoring efforts&lt;/h4&gt;
+&lt;p&gt;Immediately following establishment of the MPAs in 2012, mean lobster size at sites inside MPAs was significantly different from that observed for lobsters in unprotected waters (two-sample t-test, t(42.09) = -3.25, &lt;em&gt;p&lt;/em&gt; = 0.002), with lobsters measured inside MPAs roughly 10% smaller (Table 1). By 2018, mean lobster size inside MPAs still differed significantly from unprotected waters (two-sample t-test, t(1239.51) = 7.31, &lt;em&gt;p&lt;/em&gt; &amp;lt; 0.001), however it was roughly 5% greater in the MPA sites.&lt;/p&gt;
+&lt;p&gt;Lobster size inside MPA sites increased significantly by an average of 15% from 2012 to 2018 (two-sample t-test, t(32.5) = -4.69, &lt;em&gt;p&lt;/em&gt; &amp;lt; 0.001)), while lobsters observed outside of MPAs showed a marginal non-significant decrease in mean size over the same time period (two-sample t-test, t(296.01) = 1.33, &lt;em&gt;p&lt;/em&gt; = 0.18).&lt;/p&gt;
+&lt;strong&gt;&lt;em&gt;Table 1.&lt;/em&gt;&lt;/strong&gt; &lt;em&gt;California Spiny Lobster size statistics for monitoring efforts inside and outside of MPAs in the Santa Barbara Channel for 2012 and 2018.&lt;/em&gt;
+&lt;table class=&#34;table&#34; style=&#34;width: auto !important; margin-left: auto; margin-right: auto;&#34;&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left;&#34;&gt;
+Protection
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Mean Size (mm)
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Standard Deviation
+&lt;/th&gt;
+&lt;th style=&#34;text-align:right;&#34;&gt;
+Sample Size
+&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr grouplength=&#34;2&#34;&gt;
+&lt;td colspan=&#34;4&#34; style=&#34;border-bottom: 1px solid;&#34;&gt;
+&lt;strong&gt;2012&lt;/strong&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left; padding-left: 2em;&#34; indentlevel=&#34;1&#34;&gt;
+MPA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+67.37500
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12.15425
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+32
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left; padding-left: 2em;&#34; indentlevel=&#34;1&#34;&gt;
+Non-MPA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+74.92462
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+12.41412
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+199
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr grouplength=&#34;2&#34;&gt;
+&lt;td colspan=&#34;4&#34; style=&#34;border-bottom: 1px solid;&#34;&gt;
+&lt;strong&gt;2018&lt;/strong&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left; padding-left: 2em;&#34; indentlevel=&#34;1&#34;&gt;
+MPA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+77.56672
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+11.70341
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+1244
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left; padding-left: 2em;&#34; indentlevel=&#34;1&#34;&gt;
+Non-MPA
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+73.61996
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+10.09438
+&lt;/td&gt;
+&lt;td style=&#34;text-align:right;&#34;&gt;
+561
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;summary&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Lobster abundances have increased from 2012 to 2018, with sites in MPAs showing much greater proportional increases than sites in unprotected areas (Fig. 2)&lt;/li&gt;
+&lt;li&gt;Size of lobsters in marine protected areas has increased from 2012 to 2018 (Fig. 3)&lt;/li&gt;
+&lt;li&gt;There is a significant difference in the size of lobsters in MPAs compared to unprotected waters (Table 1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;references&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;References&lt;/h3&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;&lt;p&gt;“California Marine Protected Areas (MPAs)”. &lt;em&gt;California Department of Fish and Wildlife&lt;/em&gt;, State of California, 2019. &lt;a href=&#34;https://www.wildlife.ca.gov/Conservation/Marine/MPAs&#34; class=&#34;uri&#34;&gt;https://www.wildlife.ca.gov/Conservation/Marine/MPAs&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;“MPA Monitoring.” &lt;em&gt;California MPAs&lt;/em&gt;. &lt;a href=&#34;http://californiampas.org/mpa-monitoring&#34; class=&#34;uri&#34;&gt;http://californiampas.org/mpa-monitoring&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Tegner, M. J., and L. A. Levin. “Spiny lobsters and sea urchins: analysis of a predator-prey interaction.” Journal of Experimental Marine Biology and Ecology 73.2 (1983): 125-150.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Ling, S. D., et al. “Global regime shift dynamics of catastrophic sea urchin overgrazing.” Philosophical Transactions of the Royal Society B: Biological Sciences 370.1659 (2015): 20130269.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Breen, P. A., and K. H. Mann. “Changing lobster abundance and the destruction of kelp beds by sea urchins.” Marine Biology 34.2 (1976): 137-142.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Wharton, W. G., and K. H. Mann. “Relationship between destructive grazing by the sea urchin, Strongylocentrotus droebachiensis, and the abundance of American lobster, Homarus americanus, on the Atlantic coast of Nova Scotia.” Canadian Journal of Fisheries and Aquatic Sciences 38.11 (1981): 1339-1349.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Reed D. 2019. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012. Environmental Data Initiative. &lt;a href=&#34;https://doi.org/10.6073/pasta/a593a675d644fdefb736750b291579a0&#34; class=&#34;uri&#34;&gt;https://doi.org/10.6073/pasta/a593a675d644fdefb736750b291579a0&lt;/a&gt;. Dataset accessed 11/14/2019.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>/teaching/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/teaching/</guid>
+      <description>
+
+
+
+</description>
+    </item>
+    
+    <item>
+      <title>Using time series data to explore steelhead passage across the Bonneville Dam</title>
+      <link>/project/steelhead/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/project/steelhead/</guid>
+      <description>
+
+
+&lt;hr /&gt;
+&lt;div id=&#34;introduction&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Steelhead are a fascinating group of fishes. They are the same species as freshwater rainbow trout (&lt;em&gt;Oncorhynchus mykiss&lt;/em&gt;), but exhibit the salmon-esque behavior of swimming upstream from the ocean to spawn in the rivers where they were born. Interestingly, some even return back to the ocean after spawning - something salmon don’t even do! Monitoring populations of these special fish is important as they face increased threats due to climate change. This document explores time series data of the passage of steelhead across the Bonneville Dam in Oregon from 1940-2019.&lt;/p&gt;
+&lt;p&gt;For an interesting read on the hot debate of if a steelhead should be considered a salmon or trout, check out &lt;a href=&#34;https://www.cbc.ca/news/canada/british-columbia/salmon-or-trout-what-the-heck-is-a-steelhead-anyway-1.4461827&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/GoPNB-aA82E&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;
+&lt;/iframe&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 1.&lt;/em&gt;&lt;/strong&gt; Video of Bonneville Dam Fish Ladder. Provided by YouTube user: Pacific NW (&lt;a href=&#34;https://www.youtube.com/watch?v=GoPNB-aA82E&#34;&gt;source&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Data was retrieved from Columbia Basin Research DART (Data Access in Real Time), affiliated with the University of Washington. Counts are reported for fish crossing the Bonneville Dam fish ladder each day, either through live counts or video observations&lt;sup&gt;1&lt;/sup&gt;. Data can be accessed &lt;a href=&#34;http://www.cbr.washington.edu/dart/query/adult_graph_text&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;initial-setup-data-wrangling&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Initial setup &amp;amp; data wrangling&lt;/h3&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Attach necessary packages
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(paletteer)
+library(tsibble)
+library(fable)
+library(fabletools)
+library(feasts)
+
+# Read in data, clean up a bit!
+fish &amp;lt;- read_csv(&amp;quot;cbr_fish_passage_bonneville_allyrs_steelhead.csv&amp;quot;) %&amp;gt;% 
+  clean_names() %&amp;gt;% 
+  mutate(day_month = mm_dd) %&amp;gt;%  # R doesn&amp;#39;t love the mm-dd naming
+  unite(&amp;quot;date&amp;quot;, &amp;quot;year&amp;quot;:&amp;quot;mm_dd&amp;quot;, sep = &amp;quot;-&amp;quot;) %&amp;gt;%  # Combine year and month-day column
+  mutate(date = ydm(date),
+         year = year(date),
+         month = month(date, label = TRUE),
+         year_month = yearmonth(date)) %&amp;gt;%  #yearmonth class important for ts seasonplot
+  filter(year %in% c(1940:2019)) # only observations from 1940-2019
+
+
+# Create a subset totaling the number of fish counted each month
+fish_month &amp;lt;- fish %&amp;gt;%
+  group_by(year_month) %&amp;gt;% 
+  summarize(total = sum(value, na.rm = TRUE)) %&amp;gt;% 
+  mutate(year = year(year_month),
+         month = month(year_month, label = TRUE),
+         fish = &amp;quot;steelhead&amp;quot;)
+
+# Coerce the fish_month data to a tsibble, which is friendlier for working with time series data
+fish_ts &amp;lt;- as_tsibble(fish_month, key = fish, index = year_month)
+
+# Look at it!
+#autoplot(fish_ts)
+#gg_subseries(fish_ts)&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exploring-time-series-of-steelhead-passage-daily-monthly-and-annually&#34; class=&#34;section level3&#34;&gt;
+&lt;h3&gt;Exploring time series of steelhead passage: daily, monthly, and annually&lt;/h3&gt;
+&lt;p&gt;Counts of the number of steelhead crossing the Bonneville Dam each day show potential seasonality in fluctuations of the population (Fig. 2). There seems to be significant variation between years, as well as a general increasing trend between 1940 and 2019. This section will examine these trends more closely.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Basic plot of daily time series data
+ggplot(data = fish) +
+  geom_point(aes(x = date, y = value, color = year), 
+             show.legend = FALSE) +
+  theme_classic() +
+  labs(
+    x = NULL,
+    y = &amp;quot;Number of steelhead counted per day&amp;quot;) +
+  scale_y_continuous(limits = c(0, 35000), expand = c(0,0)) + # set y axis limits
+  scale_color_paletteer_c(&amp;quot;ggthemes::Blue&amp;quot;) &lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/steelhead/index_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 2.&lt;/em&gt;&lt;/strong&gt; Time series data of steelhead crossings for the Bonneville Dam from 1940-2019.&lt;/p&gt;
+&lt;p&gt;Closer examination reveals consistent seasonality in the timing of steelhead passage (Fig. 3) The highest number of steelhead counted is typically in the late summer months, usually around August, and has not shifted much between 1940 and 2019.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Create a season plot of a subset of the data to examine shift in the timing of fish passage
+ggplot(data = fish_month %&amp;gt;% filter(year %in% c(1940, 1960,  1980, 2000, 2019)), aes(x = month, y = total, group = year)) +
+  geom_line(aes(color = year), show.legend = FALSE) +
+  facet_wrap(~ year, 
+             ncol = 1,  
+             scales = &amp;quot;free&amp;quot;,
+             strip.position = &amp;quot;right&amp;quot;)+
+  labs(x = NULL,
+       y = &amp;quot;number of steelhead counted each month&amp;quot;)+
+  scale_color_paletteer_c(&amp;quot;ggthemes::Blue&amp;quot;)+
+  theme_classic()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/steelhead/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 3.&lt;/em&gt;&lt;/strong&gt; Timing of steelhead passage across the Bonneville Dam in 1940, 1960, 1980, 2000, 2019.&lt;/p&gt;
+&lt;p&gt;Examining monthly counts for all years confirms the consistency in this timing (Fig. 4) but also highlights the interannual variation in the size of the population. The population peaks in late summer each year, but at very differrent levels.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Use gg_season to make a more traditional season-plot
+gg_season(fish_ts) + 
+  labs(x = NULL,
+       y = &amp;quot;number of steelhead counted&amp;quot;) +
+  scale_y_continuous(limits = c(0, 250000), expand = c(0,0)) +
+  theme_classic()+
+  scale_color_paletteer_c(&amp;quot;ggthemes::Blue&amp;quot;, direction = 1,
+                          labels = c(&amp;quot;1940&amp;quot;, &amp;quot;1960&amp;quot;, &amp;quot;1980&amp;quot;, &amp;quot;2000&amp;quot;, &amp;quot;2019&amp;quot;))&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/steelhead/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 4.&lt;/em&gt;&lt;/strong&gt; Passage of steelhead across the Bonneville Dam. Shades of blue transition from light to dark over time - early years (1940s) are shown in light blue, and later years (2010s) in darker blues.&lt;/p&gt;
+&lt;p&gt;There is significant interannual variability in the number of steelhead crossing the dam, as seen by the many peaks and troughs (Fig. 5 solid line), however this variability also follows a larger trend: the population saw significant increases in the late 1990s and early 2000s, but has since began to decline (Fig 5 dashed line and shaded area).&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;fish_year &amp;lt;- fish_ts %&amp;gt;% 
+  index_by(annual = ~year(.)) %&amp;gt;% 
+  summarize(
+    avg_amount = mean(total))
+
+ggplot(data = fish_year, aes(x = annual, y = avg_amount)) +
+  geom_line(color = &amp;quot;steelblue4&amp;quot;) +
+  geom_smooth(color = &amp;quot;steelblue4&amp;quot;,
+              size = 0.2,
+              linetype = &amp;quot;dashed&amp;quot;,
+              fill = &amp;quot;steelblue3&amp;quot;,
+              alpha = 0.2) +
+  theme_classic() +
+  labs(x = NULL,
+       y = &amp;quot;annual number of steelhead&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/project/steelhead/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Figure 5.&lt;/em&gt;&lt;/strong&gt; Annual passage of steelhead across the Bonneville Dam (solid line), overall trend using loess smoothing (dashed line), with 95% confidence intervals (shaded area).&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;citations&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Citations&lt;/h2&gt;
+&lt;ol style=&#34;list-style-type: decimal&#34;&gt;
+&lt;li&gt;Columbia River DART, Columbia Basin Research, University of Washington. (2019). Adult Passage Graphics &amp;amp; Text. Available from &lt;a href=&#34;http://www.cbr.washington.edu/dart/query/adult_graph_text&#34; class=&#34;uri&#34;&gt;http://www.cbr.washington.edu/dart/query/adult_graph_text&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
 </description>
     </item>
     

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors | Best site EVER</title>
+    <title>Authors | Cori Lopazanski</title>
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
@@ -11,24 +11,6 @@
       <title>Authors</title>
       <link>/authors/</link>
     </image>
-    
-    <item>
-      <title></title>
-      <link>/authors/admin/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/admin/</guid>
-      <description>&lt;p&gt;Cori is broadly interested in marine conservation ecology, with an emphasis on merging basic science with applied issues and public engagement. She comes to Bren from the University of North Carolina’s Institute of Marine Sciences, where she worked on multiple projects related to the population ecology of estuarine fishes and natural history of biogenic habitats. She’s particularly interested in species-habitat interactions and the value of coastal systems as nursery habitat for commercially and recreationally important species. Her past research has explored diverse marine systems (ranging from North Carolina estuaries to Caribbean and Pacific islands to Australian bays), and a wide set of ecological issues (e.g., seagrass and marsh ecology, population structure/dynamics, fisheries, sea turtle and dolphin conservation biology).&lt;/p&gt;
-&lt;p&gt;As a PhD student at Bren, Cori hopes to work to better understand human impacts on marine systems, and plans to use an interdisciplinary approach to explore creative strategies for natural resource management.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Robert Ford</title>
-      <link>/authors/robert-ford/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>/authors/robert-ford/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>

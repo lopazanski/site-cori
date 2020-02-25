@@ -1,0 +1,183 @@
+---
+title: "A case study in population fluctuations: snowshoe hares in Bonanza Creek Experimental Forest, Alaska"
+author: "Cori Lopazanski"
+date: "1/26/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	message = TRUE,
+	warning = TRUE
+)
+```
+
+
+***
+## {.tabset}
+
+### Introduction
+
+Snowshoe hares experience population fluctuations approximately every 8-11 years^1^. This document explores the population dynamics of hares tagged in Bonanza Creek Experimental Forest, Alaska between 1998 and 2012. It shows how the abundance has changed, and compares the average weight of hares in the years of lowest and highest abundance. 
+
+![***Figure 1.*** Snowshoe hare, *Lepus americanus*. Photo Credit: National Park Service ([source](https://nsf.gov/discoveries/disc_summ.jsp?cntn_id=244505))](hare.jpg) 
+
+![***Figure 2.*** Location of Bonanza Creek Experimental Forest, approximately 20 km southwest of Fairbanks, Alaska. Map Credit: Bonanza Creek LTER ([source](https://www.lter.uaf.edu/research/study-sites-overview))](bonanza.jpg)
+
+### Initial Data Wrangling
+
+This section contains the code used to read-in and manipulate the dataset provided by the Bonanza Creek Long Term Ecological Research Program for the subsequent visualizations and analyses.
+
+Note: This dataset includes information about the number of hares tagged in Bonanza Creek Experimental Forest. For the sake of this document, it will be assumed that the number of hares tagged translates directly to the size of the overall population. 
+
+
+```{r message=FALSE, warning=FALSE}
+# Attach Packages 
+library(tidyverse)
+library(janitor)
+library(lubridate)
+library(kableExtra)
+
+# Read in data, initial wrangling to select necessary columns
+hare <- read_csv("showshoe_lter.csv") %>% 
+  select(date, sex, age, weight, b_key, grid) %>% 
+  mutate(date = mdy(date),
+         year = year(date),
+         month = month(date))
+
+
+# Create data frame to see population change over time
+yearly_timeline <- hare %>%
+  group_by(year) %>% 
+  summarize(
+    count = n(),
+    avg_wt = mean(weight, na.rm = TRUE))
+
+```
+
+
+### Visualization
+
+Snowshoe hares experience population fluctuations every 8-11 years^1^. Figure 1 illustrates this concept by showing the annual abundances of hares tagged in Bonanza Creek Experimental Forest from 1998-2012. Populations were high in 1999 (nearly 400 hares tagged), but decreased drastically to a low of 29 in 2002. Following this low, the population gradually increased even higher - by 2009, there were 439 hares taggged. 
+
+```{r message=FALSE, warning=FALSE}
+# Use ggplot to create a graph showing changes in annual abundance
+ggplot(data = yearly_timeline) + # use data frame from previous tab
+  geom_path(aes(x = year, y = count), color = "red")+ 
+  scale_x_continuous(limits = c(1998, 2012), # set limits to x and y axis
+                     breaks = c(1998:2012), 
+                     expand = c(0,.5)) +
+  scale_y_continuous(limits = c(0, 500), 
+                     expand = c(0,0))+
+  labs( # add reader-friendly labels
+    y = "Number of hares trapped",
+    x = "year") +
+  theme_classic() # simple theme
+
+```
+
+***Figure 3.*** Annual abundances of tagged snowshoe hares in the Bonanza Creek Experimental Forest from 1998 to 2012. 
+
+### Statistical Comparison
+
+```{r}
+# Data frame to compare just the weights
+weight <- hare %>% 
+  filter(year %in% c(2002,2009)) %>% 
+  select(year, weight)
+
+# Look at the data to see how they are distributed
+# ggplot(data = weight, aes(x = weight)) +
+#  geom_histogram()+
+#  facet_wrap(~year, scales = "free") 
+
+# Lack of data (because lack of hares) in 2002 - not as nicely distributed but still probably OK
+# ggplot(data = weight, aes(sample = weight)) + 
+#  geom_qq()+
+#  facet_wrap(~year)
+
+#Since the majority seem normal, will still do a two-sample t-test to compare means.
+weight_2002 <- weight %>% 
+  filter(year == "2002")
+weight_2009 <- weight %>% 
+  filter(year == "2009")
+
+weight_t <- t.test(weight_2009$weight, weight_2002$weight)
+
+# Alternative for non-parametric data would be the Mann-Whitney U (just try out of curiosity) - compares medians
+weight_rank <- wilcox.test(weight_2002$weight, weight_2009$weight)
+
+# Both are insignificant results - meaning that there isn't a significant difference in the means or medians
+
+# Create data frame "diff" to compare lowest abundance (2002) to highest (2009)
+diff <- hare %>% 
+  filter(year %in% c(2002, 2009)) %>% 
+  group_by(year) %>% 
+  summarize(
+    "Abundance" = n(),
+    "Average Weight (g)" = mean(weight, na.rm = TRUE)) %>% 
+  pivot_longer("Abundance":"Average Weight (g)", 
+               names_to = "metric", 
+               values_to = "value") %>% 
+  pivot_wider(id_cols = metric, 
+              names_from = year, 
+              values_from = value) %>% 
+  rename(y2002 = "2002") %>%  # Rename for friendlier calculations in subsequent steps
+  rename(y2009 = "2009") %>% 
+  mutate(pct_diff = round(((y2009-y2002)/y2002)*100, 1)) %>% # calculate percent difference
+  mutate(pct_diff = paste(pct_diff, "%", sep = "")) %>% # add "%" to those calculated values
+  mutate_if(is.numeric, format, digits = 1, nsmall = 0) # restrict number of decimal places
+
+
+
+# Use kableExtra to make a nicely-formatted table 
+kable(diff, col.names = c("", "2002", "2009", "Percent Increase")) %>%
+        kable_styling(bootstrap_options = c("striped", "hover"), 
+                full_width = F) %>% 
+add_header_above(c("Table 1: Extreme fluctuations in the snowshoe hare population in Bonanza Creek Experimental Forest, Alaska" = 4))
+
+```
+
+Examining the abundance of hares over time showed that the population declined to an extreme low in 2002, but increased by 1192% to a new peak in 2009 (Figure 1, Table 1). The average weight of the hares increased slightly from 2002 to 2009 (11%), but the difference is insignificant (two sample t-test, t(`r round(weight_t$parameter, 2)`) = `r round(weight_t$statistic, 2)`, *p* = `r round(weight_t$p.value, 3)`). 
+
+
+### Citations and Additional Exploratory Code
+
+1. Kielland K., F. S. Chapin, R. W. Ruess. 2017. Snowshoe hare physical data in Bonanza Creek Experimental Forest: 1999-Present. Environmental Data Initiative. https://doi.org/10.6073/pasta/03dce4856d79b91557d8e6ce2cbcdc14. Dataset accessed 1/30/2020.
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+# Exploratory Code Not Used for Final Document 
+# Examine and visualize monthly fluctuations in hare abundance
+monthly_timeline <- hare %>%
+  group_by(month) %>% 
+  summarize(
+    count = n(),
+    avg_wt = mean(weight, na.rm = TRUE))
+
+ggplot(data = monthly_timeline) +
+  geom_point(aes(x = month, y = count)) +
+  geom_line(aes(x = month, y = avg_wt))
+
+
+# What if we follow weights of individual hares through time?
+individual <- hare %>% 
+  filter(!is.na(weight), !is.na(b_key)) %>% 
+  group_by(b_key) %>% 
+  summarize(
+    count = n() # There are 9 that have been seen and weighed at least 15x
+  ) %>% 
+  arrange(-count) %>% 
+  head(9) 
+
+weights <- hare %>% 
+  filter(b_key %in% individual$b_key & !is.na(weight)) %>% 
+  mutate(id = as.factor(b_key))
+
+ggplot(data = weights) +
+  geom_path(aes(x = date, y = weight, color = id))
+
+```
+
+paletteer, tsibble, feasts, fable, fabletools, forecast, and mapview

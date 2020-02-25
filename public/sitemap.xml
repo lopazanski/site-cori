@@ -18,11 +18,6 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/talk/example/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url>
@@ -33,16 +28,6 @@
   </url>
   
   <url>
-    <loc>/project/my-new-project/</loc>
-    <lastmod>2020-01-09T15:02:34-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/</loc>
-    <lastmod>2020-01-09T15:02:34-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
   </url>
@@ -50,6 +35,11 @@
   <url>
     <loc>/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/courses/</loc>
+    <lastmod>2019-05-05T00:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -108,6 +98,11 @@
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/privacy/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
   </url>
@@ -115,26 +110,6 @@
   <url>
     <loc>/terms/</loc>
     <lastmod>2018-06-28T00:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/deep-learning/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/demo/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/external-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/internal-project/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -208,7 +183,43 @@
   </url>
   
   <url>
-    <loc>/courses/</loc>
+    <loc>/project/bonanza-creek-hares/</loc>
+  </url>
+  
+  <url>
+    <loc>/data-sci/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/env_data_pca/</loc>
+  </url>
+  
+  <url>
+    <loc>/gallery/</loc>
+  </url>
+  
+  <url>
+    <loc>/experience/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/salamanders/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/lobster/</loc>
+  </url>
+  
+  <url>
+    <loc>/teaching/</loc>
+  </url>
+  
+  <url>
+    <loc>/project/steelhead/</loc>
   </url>
   
 </urlset>
